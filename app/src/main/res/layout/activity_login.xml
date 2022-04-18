@@ -37,7 +37,7 @@
             android:visibility="visible" />
     </RelativeLayout>
 
-    <TextView
+    <Button
         android:id="@+id/login_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,9 +54,10 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
+    <Button
         android:id="@+id/login_experience"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,7 +76,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_phone"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintVertical_bias="0.144"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -100,14 +102,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleX="0.7"
-                android:scaleY="0.7" />
+                android:scaleY="0.7"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 style="@style/TextStyle.Explain"
                 android:layout_width="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:text="@string/agree_protocol"
-                android:textColor="@color/lightgray" />
+                android:textColor="@color/lightgray"
+                tools:ignore="TextContrastCheck" />
 
             <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
                 android:id="@+id/tv_user_protocol"

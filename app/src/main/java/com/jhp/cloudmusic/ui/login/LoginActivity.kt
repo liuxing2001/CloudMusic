@@ -12,14 +12,17 @@ class LoginActivity : AppCompatActivity() {
 
         initBinding()
 
-
+        initListener()
 
     }
-
 
 
     private fun initBinding(){
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    private fun initListener() {
+        val protocol = binding.cbProtocol
     }
 }
