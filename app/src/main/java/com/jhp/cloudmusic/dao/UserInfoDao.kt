@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.core.content.edit
 import com.google.gson.Gson
 import com.jhp.cloudmusic.MyApplication
+import com.jhp.cloudmusic.model.LoginUser
 import com.jhp.cloudmusic.model.UserInfo
 
 /**
@@ -22,12 +23,14 @@ object UserInfoDao {
 
     // 判断用户是否登录
 
-    fun isLogin() = sharePreferences().contains("userInfo")
+    fun isLogin() = sharePreferences().contains("userName")
 
     //存储用户信息
 
-    fun saveUserInfo(userInfo: UserInfo) {
+    fun saveUserInfo(loginUser: LoginUser, userInfo: UserInfo) {
         sharePreferences().edit {
+            putString("userName", loginUser.userName)
+            putString("md5_password", loginUser.md5_password)
             putString("userInfo", Gson().toJson(userInfo))
         }
     }
@@ -36,6 +39,12 @@ object UserInfoDao {
     fun getUserInfo(): UserInfo {
         val userJson = sharePreferences().getString("userInfo", "")
         return Gson().fromJson(userJson, UserInfo::class.java)
+    }
+    //获取账号密码
+    fun getLoginUser(): LoginUser {
+        val userName: String = sharePreferences().getString("userName", "") as String
+        val password: String = sharePreferences().getString("md5_password", "") as String
+        return LoginUser(userName, password)
     }
 
 

@@ -14,9 +14,10 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
-    <style name="Theme.CloudMusic.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="AppTheme.PhoneLoginActivity">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="Theme.CloudMusic.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

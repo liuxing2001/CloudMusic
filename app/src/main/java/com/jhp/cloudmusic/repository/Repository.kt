@@ -32,7 +32,7 @@ object Repository {
         if (res.code == 200) {
             // 异步线程
             Thread {
-                UserInfoDao.saveUserInfo(res)
+                UserInfoDao.saveUserInfo(data,res)
             }.start()
             Result.success(res.account)
         } else Result.failure(RuntimeException("response status is ${res.code}"))

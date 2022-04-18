@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout
@@ -95,8 +96,8 @@
             android:layout_marginRight="20dp"
             android:background="@color/color_F71816" />
 
-        <TextView
-            android:id="@+id/tv_login_next"
+        <Button
+            android:id="@+id/btn_login_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/line_view"
@@ -111,7 +112,7 @@
             android:text="下一步"
             android:textColor="@android:color/white"
             android:textSize="15sp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
     </RelativeLayout>
 
     <LinearLayout
@@ -154,14 +155,13 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/et_login_password"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:background="@color/color_F71816" />
 
-        <TextView
-            android:id="@+id/tv_login_login"
+        <Button
+            android:id="@+id/btn_login_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -174,6 +174,7 @@
             android:paddingBottom="10dp"
             android:text="登录"
             android:textColor="@android:color/white"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
     </LinearLayout>
 </LinearLayout>

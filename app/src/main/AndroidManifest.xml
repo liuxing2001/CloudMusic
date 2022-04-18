@@ -22,7 +22,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.login.PhoneLoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.PhoneLoginActivity"/>
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
@@ -43,7 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="android.max_aspect"
