@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/white"
+    android:layout_marginStart="10dp"
+    tools:context=".ui.home.MusicTabFragment">
+
+
+    <ImageView
+        android:id="@+id/iv_tab"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_bottom_music"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="261dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="6dp"
+        android:layout_toStartOf="@+id/music_tab_play"
+        android:layout_toEndOf="@+id/iv_tab"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/viewpager_list_toptext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="被驯服的象"
+            android:textColor="@color/listTextColor"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/viewpager_list_bottom_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="蔡健雅"
+            android:textColor="@color/listSubTextColor"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/music_tab_play"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/music_tab_list"
+        android:focusable="true"
+        android:src="@mipmap/music_tab_play"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/music_tab_list"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:focusable="true"
+        android:src="@mipmap/music_tab_list"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+
+</RelativeLayout>

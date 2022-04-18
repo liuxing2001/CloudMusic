@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable-v24/ic_menu_search.xml" value="0.198" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable-v24/icon_play_pause.xml" value="0.2025" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/side_nav_bar.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout-w1240dp/activity_login2.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_login2.xml" value="0.264" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_main2.xml" value="0.13858695652173914" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_music_service_layout.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_player.xml" value="0.176" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_splash.xml" value="0.264" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/app_bar_main.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/content_main.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_dashboard.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_gallery.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_home.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_music_tab.xml" value="0.4" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_notifications.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_slideshow.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/layout_main_content.xml" value="0.264" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/nav_header_main.xml" value="0.13043478260869565" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/activity_main_drawer.xml" value="0.225" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/bottom_nav_menu.xml" value="0.225" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/main.xml" value="0.225" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/main_activity2.xml" value="0.21666666666666667" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/menu_navigation_bottom.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/menu_search.xml" value="0.21666666666666667" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.211" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.211" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
