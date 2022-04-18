@@ -1,4 +1,4 @@
-package com.jhp.cloudmusic.ui.common.myview;
+package com.jhp.cloudmusic.ui.login;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -50,7 +50,7 @@ public class SpreadView extends View {
         int centerColor = a.getColor(R.styleable.SpreadView_spread_center_color,
                 ContextCompat.getColor(context, android.R.color.holo_red_dark));
         int spreadColor = a.getColor(R.styleable.SpreadView_spread_spread_color,
-                ContextCompat.getColor(context, android.R.color.holo_red_dark));
+                ContextCompat.getColor(context, R.color.white));
         distance = a.getInt(R.styleable.SpreadView_spread_distance, distance);
         a.recycle();
         //中心画笔
