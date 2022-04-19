@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/music_tab_head"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:background="@color/white"
     android:layout_marginStart="10dp"
+    android:background="@color/white"
     tools:context=".ui.home.MusicTabFragment">
 
 
     <ImageView
-        android:id="@+id/iv_tab"
+        android:id="@+id/music_tab_disc"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -27,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_marginEnd="6dp"
         android:layout_toStartOf="@+id/music_tab_play"
-        android:layout_toEndOf="@+id/iv_tab"
+        android:layout_toEndOf="@+id/music_tab_disc"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="6dp">

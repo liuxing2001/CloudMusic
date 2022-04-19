@@ -70,9 +70,10 @@ dependencies {
     //      Material组件库和ViewPager2
     implementation 'com.google.android.material:material:1.5.0'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
-    //      XUI
+    //      XUI   https://github.com/xuexiangjys/XUI
     implementation 'com.github.xuexiangjys:XUI:1.1.9'
-
+    //      mediaPlay播放插件 https://github.com/EspoirX/StarrySky
+    implementation 'com.github.EspoirX:StarrySky:v2.6.5'
 
 
 }

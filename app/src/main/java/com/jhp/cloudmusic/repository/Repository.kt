@@ -37,4 +37,59 @@ object Repository {
             Result.success(res.account)
         } else Result.failure(RuntimeException("response status is ${res.code}"))
     }
+    //搜索
+    fun search(data: String) = fire(Dispatchers.IO) {
+        val res = ApplicationNetWork.search(data)
+        if (res.code == 200) Result.success(res.result.songs)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取用户歌单
+    fun getPlayList(data: String) = fire(Dispatchers.IO) {
+        val res = ApplicationNetWork.getPlayList(data)
+        if (res.code == 200) Result.success(res.playlist)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取歌单所有歌曲
+    fun getPlayListDetail(data: String) = fire(Dispatchers.IO) {
+        val res = ApplicationNetWork.getPlayListTrack(data)
+        if (res.code == 200) Result.success(res.songs)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取每日推荐歌曲
+    fun getRecommendSongs() = fire(Dispatchers.IO) {
+        val res = ApplicationNetWork.getRecommendSongs()
+        if (res.code == 200) Result.success(res.data.dailySongs)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取歌词
+    fun getLyric(id: Int) = fire(Dispatchers.IO) {
+        val res = ApplicationNetWork.getLyric(id)
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取音乐播放路径
+    fun getMusicUrl(id:String) = fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getMusicUrl(id)
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取评论
+    fun getMusicComment(id:String) = fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getMusicComment(id)
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取评论
+    fun getTopList() = fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getTopList()
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
 }

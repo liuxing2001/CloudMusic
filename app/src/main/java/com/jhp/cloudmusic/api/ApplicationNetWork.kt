@@ -18,7 +18,14 @@ object ApplicationNetWork {
     //创建UserService接口动态代理对象
     private val UserService = ServiceCreator.create(UserService::class.java)
     suspend fun login(data: LoginUser) = UserService.login(data.userName, data.md5_password).await()
-
+    suspend fun search(data: String) = UserService.search(data).await()
+    suspend fun getPlayList(data: String) = UserService.getPlayList(data).await()
+    suspend fun getPlayListTrack(data: String) = UserService.getPlayListTrack(data, 100).await()
+    suspend fun getRecommendSongs() = UserService.getRecommendSongs().await()
+    suspend fun getLyric(id: Int) = UserService.getLyric(id).await()
+    suspend fun getMusicUrl(id: String) = UserService.getMusicUrl(id).await()
+    suspend fun getMusicComment(id: String) = UserService.getComment(id).await()
+    suspend fun getTopList() = UserService.getTopList().await()
 
 
     //这里采用协程异步调用的方式,统一了网络服务的接口,因此所有API都定义为挂起函数

@@ -3,6 +3,8 @@ package com.jhp.cloudmusic
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import com.lzx.starrysky.StarrySky
+import com.xuexiang.xui.XUI
 
 /**
  *  相当于Singleton对象在APP启动时创建,生命周期伴随随整个APP
@@ -18,5 +20,8 @@ class MyApplication :Application(){
     override fun onCreate() {
         super.onCreate()
         context = applicationContext
+        XUI.init(this)
+        XUI.debug(true)
+        StarrySky.init(this).apply()
     }
 }

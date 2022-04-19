@@ -3,11 +3,8 @@ package com.jhp.cloudmusic.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jhp.cloudmusic.databinding.ActivityPhoneLoginBinding
 import com.jhp.cloudmusic.extension.md5Encode
