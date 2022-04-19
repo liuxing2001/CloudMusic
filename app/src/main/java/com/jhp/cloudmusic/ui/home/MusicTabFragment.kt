@@ -47,20 +47,28 @@ class MusicTabFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMusicTabBarBinding.inflate(inflater, container, false)
+
+        initListener()
+
+
+        return _binding.root
+    }
+
+
+
+    private fun initListener() {
         binding.musicTabHead.setOnClickListener {
             goPlayerPage()
         }
         binding.musicTabPlay.setOnClickListener {
             objectAnimator.resume()
 
-//            val info = SongInfo()
-//            info.songId = "111"
-//            info.songUrl = "http://music.163.com/song/media/outer/url?id=317151.mp3"
-//            StarrySky.with().playMusicByInfo(info)
+            val info = SongInfo()
+            info.songId = "111"
+            info.songUrl = "http://music.163.com/song/media/outer/url?id=317151.mp3"
+            StarrySky.with().playMusicByInfo(info)
         }
-        return _binding.root
     }
-
 
 
     private fun goPlayerPage(){
