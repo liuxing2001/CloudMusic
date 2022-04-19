@@ -1,13 +1,13 @@
-package com.jhp.cloudmusic.ui.home.notifications
+package com.jhp.cloudmusic.ui.home.attention
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class AttentionViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "关注Fragment"
     }
     val text: LiveData<String> = _text
 }

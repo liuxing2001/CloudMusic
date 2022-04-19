@@ -53,6 +53,8 @@
         android:layout_width="0dp"
         android:layout_height="?actionBarSize"
         android:background="?android:attr/windowBackground"
+        app:itemIconSize="25dp"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

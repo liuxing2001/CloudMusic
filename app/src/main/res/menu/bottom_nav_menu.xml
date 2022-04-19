@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
-
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:icon="@mipmap/ic_discovery"
+        android:title="@string/title_discovery" />
+    <item
+        android:id="@+id/navigation_podcast"
+        android:icon="@mipmap/ic_podcast"
+        android:title="@string/title_podcast" />
+    <item
+        android:id="@+id/navigation_mine"
+        android:icon="@mipmap/ic_mine"
+        android:title="@string/title_mine" />
+    <item
+        android:id="@+id/navigation_attention"
+        android:icon="@mipmap/ic_attention"
+        android:title="@string/title_attention" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_village"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:title="@string/title_village" />
 
 </menu>

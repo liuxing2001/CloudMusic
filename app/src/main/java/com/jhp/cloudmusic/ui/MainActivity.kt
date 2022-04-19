@@ -10,12 +10,18 @@ import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.jhp.cloudmusic.databinding.ActivityMainBinding
 import com.jhp.cloudmusic.ui.common.adapter.MainViewPagerAdapter
 import com.jhp.cloudmusic.ui.common.mediator.BnvVp2Mediator
-import com.jhp.cloudmusic.ui.home.dashboard.DashboardFragment
-import com.jhp.cloudmusic.ui.home.home.HomeFragment
-import com.jhp.cloudmusic.ui.home.notifications.NotificationsFragment
+import com.jhp.cloudmusic.ui.home.attention.AttentionFragment
+import com.jhp.cloudmusic.ui.home.discovery.DiscoveryFragment
+import com.jhp.cloudmusic.ui.home.mine.MineFragment
+import com.jhp.cloudmusic.ui.home.podcast.PodcastFragment
+
+import com.jhp.cloudmusic.ui.home.village.VillageFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -73,14 +79,18 @@ class MainActivity : AppCompatActivity() {
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         window.statusBarColor = Color.TRANSPARENT
+
+
     }
 
     //初始化viewpager
     private fun initPager() {
         val fragments = mapOf<Int, Fragment>(
-            INDEX_HOME to HomeFragment(),
-            INDEX_DASHBOARD to DashboardFragment(),
-            INDEX_NOTIFICATIONS to NotificationsFragment(),
+            INDEX_DISCOVERY to DiscoveryFragment(),
+            INDEX_PODCAST to PodcastFragment(),
+            INDEX_MINE to MineFragment(),
+            INDEX_ATTENTION to AttentionFragment(),
+            INDEX_VILLAGE to VillageFragment()
         )
         binding.apply {
             includeMain.vp2Main.adapter = MainViewPagerAdapter(this@MainActivity, fragments)
@@ -93,8 +103,10 @@ class MainActivity : AppCompatActivity() {
 
 
     companion object {
-        const val INDEX_HOME = 0
-        const val INDEX_DASHBOARD = 1
-        const val INDEX_NOTIFICATIONS = 2
+        const val INDEX_DISCOVERY = 0
+        const val INDEX_PODCAST = 1
+        const val INDEX_MINE = 2
+        const val INDEX_ATTENTION = 3
+        const val INDEX_VILLAGE = 4
     }
 }

@@ -1,4 +1,4 @@
-package com.jhp.cloudmusic.ui.home.home
+package com.jhp.cloudmusic.ui.home.village
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.jhp.cloudmusic.databinding.FragmentHomeBinding
+
+import com.jhp.cloudmusic.databinding.FragmentVillageBinding
 
 
-class HomeFragment : Fragment() {
+class VillageFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentVillageBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,14 +24,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val villageViewModel =
+            ViewModelProvider(this)[VillageViewModel::class.java]
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentVillageBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textNotifications
+        villageViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

@@ -1,4 +1,4 @@
-package com.jhp.cloudmusic.ui.home.dashboard
+package com.jhp.cloudmusic.ui.home.attention
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.jhp.cloudmusic.databinding.FragmentDashboardBinding
+import com.jhp.cloudmusic.databinding.FragmentAttentionBinding
 
-class DashboardFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+
+class AttentionFragment : Fragment() {
+
+    private var _binding: FragmentAttentionBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +24,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val attentionViewModel =
+            ViewModelProvider(this)[AttentionViewModel::class.java]
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentAttentionBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textHome
+        attentionViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
