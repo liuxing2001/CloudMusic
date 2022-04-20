@@ -5,14 +5,266 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.player.PlayerActivity">
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="player activity"
+    <!--背景图-->
+    <ImageView
+        android:id="@+id/playerBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.6"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@color/color_F71816"
+        tools:ignore="ContentDescription" />
+
+    <!--  顶部标题 -->
+    <LinearLayout
+        android:id="@+id/title_song_container"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="?actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerBg">
+        <ImageView
+            android:id="@+id/play_song_iconDown"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_menu_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/player_song_title"
+                android:textSize="24sp"
+                android:textColor="@color/xui_config_color_black"
+                android:fontFamily="sans-serif-smallcaps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/player_song_subtitle"
+                android:textColor="@color/xui_config_color_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--转盘-->
+    <RelativeLayout
+        android:id="@+id/disc_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/playerBg"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/playerBg"
+        app:layout_constraintTop_toTopOf="@+id/playerBg"
+        app:layout_constraintVertical_bias="0.200">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/play_disc"
+            android:layout_width="360dp"
+            android:layout_height="360dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_bottom_music" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/play_write"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+    <!--    歌词显示控件-->
+    <LinearLayout
+        android:id="@+id/lyric_container"
+        android:layout_width="wrap_content"
+        android:layout_height="600dp"
+        android:layout_marginTop="?actionBarSize"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutSong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title_song_container"
+        app:layout_constraintVertical_bias="0.183">
+
+        <com.dirror.lyricviewx.LyricViewX
+            android:id="@+id/lyricViewX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lrcPadding="16dp" />
+    </LinearLayout>
+
+    <!--歌曲操作界面-->
+    <LinearLayout
+        android:id="@+id/linearLayoutSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/playerBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerBg"
+        app:layout_constraintVertical_bias="0.814">
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            app:srcCompat="@drawable/icon_music_cloud" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            app:srcCompat="@drawable/icon_music_download" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:id="@+id/music_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="30dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:focusable="true"
+            app:srcCompat="@drawable/icon_music_msg" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            app:srcCompat="@drawable/icon_music_favorite" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icon_music_elipsis" />
+    </LinearLayout>
+
+    <!--  进度控制条  -->
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSong"
+        app:layout_constraintVertical_bias="0.982">
+
+        <!--        <SeekBar-->
+        <!--            android:id="@+id/musicSeekBar"-->
+        <!--            style="@android:style/Widget.DeviceDefault.SeekBar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content" />-->
+        <SeekBar
+            android:id="@+id/musicSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            android:alpha="0.72"
+            android:maxHeight="2dp"
+            android:minHeight="4dp"
+            android:progressDrawable="@drawable/background_seek_bar_music"
+            android:splitTrack="false"
+            android:background="@null"
+            android:thumb="@drawable/background_seek_bar_thumb"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/musicSeekBar"
+            android:layout_alignEnd="@id/musicSeekBar">
+
+            <TextView
+                android:id="@+id/music_cur"
+                android:text="00:00:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="right" />
+
+            <TextView
+                android:id="@+id/music_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <!--播放器控制界面-->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerBg"
+        app:layout_constraintVertical_bias="0.963">
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="55dp"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/icon_music_repeat" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:id="@+id/play_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/icon_before_step" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:id="@+id/play_start"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/icon_music_play" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:id="@+id/play_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/icon_next_step" />
+
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:id="@+id/player_now_playlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="55dp"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/icon_music_list" />
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

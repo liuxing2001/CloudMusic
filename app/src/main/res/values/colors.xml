@@ -8,6 +8,10 @@
     <color name="color_F71816">#F71816</color>
     <color name="listSubTextColor">#ff888888</color>
     <color name="listTextColor">#ff333333</color>
+    <color name="text_collect">#FE3A3C</color>
+    <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
+    <color name="colorAccent">#299EE3</color>
+
 
     <color name="white">#FFFFFF</color>
     <!-- 白色 -->

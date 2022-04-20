@@ -77,4 +77,6 @@ dependencies {
     //      glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    //      歌词控件
+    implementation 'com.github.Moriafly:LyricViewX:1.2.1'
 }

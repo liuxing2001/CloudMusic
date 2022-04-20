@@ -21,6 +21,7 @@ import com.jhp.cloudmusic.dao.UserInfoDao
 import com.jhp.cloudmusic.databinding.FragmentMineBinding
 import com.jhp.cloudmusic.model.UserPlayList
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
+import com.jhp.cloudmusic.ui.playlist.PlayListActivity
 import com.jhp.cloudmusic.utils.XToastUtils
 import com.xuexiang.xui.utils.WidgetUtils
 import com.xuexiang.xui.widget.dialog.MiniLoadingDialog
@@ -67,6 +68,13 @@ class MineFragment : Fragment() {
             mMiniLoadingDialog.hide()
             binding.findFragmentRefresh.isRefreshing = false
         }
+        //下拉刷新
+        binding.findFragmentRefresh.apply {
+            setColorSchemeResources(R.color.color_F71816)
+            setOnRefreshListener {
+                viewModel.getPlayList(userInfo.account.id.toString())
+            }
+        }
     }
 
     private fun initView() {
@@ -97,14 +105,17 @@ class MineFragment : Fragment() {
                     showSimpleBottomSheetList(itemData)
                 }
                 itemSong.setOnClickListener {
-//                    val intent = Intent(context, PlayListActivity::class.java).apply {
-//                        putExtra("id", itemData.id.toString())
-//                        putExtra("bgUrl", itemData.coverImgUrl)
-//                        putExtra("avUrl", itemData.creator.avatarUrl)
-//                        putExtra("author", itemData.creator.nickname)
-//                        putExtra("title", itemData.name)
-//                    }
-//                    startActivity(intent)
+                    val intent = Intent(context, PlayListActivity::class.java).apply {
+                        putExtra("id", itemData.id.toString())
+                        putExtra("bgUrl", itemData.coverImgUrl)
+                        putExtra("avUrl", itemData.creator.avatarUrl)
+                        putExtra("author", itemData.creator.nickname)
+                        putExtra("title", itemData.name)
+                        putExtra("music_count", itemData.trackCount.toString())
+                        putExtra("play_count", itemData.playCount)
+                        putExtra("description", itemData.description)
+                    }
+                    startActivity(intent)
                 }
             }
             .create()

@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
@@ -20,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
-            app:navigationIcon="@mipmap/ic_drawer"
             app:menu="@menu/menu_search"
+            app:navigationIcon="@mipmap/ic_drawer"
             app:popupTheme="@style/Theme.CloudMusic.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -31,9 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#FFFFFF"
-        android:backgroundTint="#E2FEE7"
         app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
 
     </androidx.viewpager2.widget.ViewPager2>
 

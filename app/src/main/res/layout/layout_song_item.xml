@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:paddingTop="3dp"
+    android:paddingEnd="8dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <TextView
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textColor="@color/app_color_theme_7"
+            android:textSize="20sp"
+            android:id="@+id/songIndex"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <LinearLayout
+            android:layout_weight="7"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            >
+
+            <TextView
+                android:id="@+id/songTitle"
+                style="@style/TextStyle.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/songSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:textSize="12sp"
+                android:singleLine="false"
+                />
+        </LinearLayout>
+        <com.xuexiang.xui.widget.imageview.IconImageView
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="1dp"
+        android:layout_height="1px"
+        android:background="#FFA59C9C"
+        android:layout_width="fill_parent" />
+</LinearLayout>

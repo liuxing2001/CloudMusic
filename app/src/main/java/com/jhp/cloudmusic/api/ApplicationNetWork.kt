@@ -15,6 +15,7 @@ import kotlin.coroutines.suspendCoroutine
  * @date : 2022-04-01 15:22
  */
 object ApplicationNetWork {
+
     //创建UserService接口动态代理对象
     private val UserService = ServiceCreator.create(UserService::class.java)
     suspend fun login(data: LoginUser) = UserService.login(data.userName, data.md5_password).await()

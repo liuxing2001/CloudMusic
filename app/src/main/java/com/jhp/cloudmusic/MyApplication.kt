@@ -24,4 +24,5 @@ class MyApplication :Application(){
         XUI.debug(true)
         StarrySky.init(this).apply()
     }
+
 }
