@@ -1,6 +1,6 @@
 # 项目名称（CloudMusic）
 
-这里再写一句骚气又精准的话描述你的项目吧
+仿网易云音乐Android客户端V6.1版本(MVVM架构)
 
 ## 上手指南
 
@@ -28,25 +28,6 @@
 
 最后阐述安装完成后的情况，展示下Demo。
 
-## 测试
-
-解释一下如何运行该系统的自动测试部分。
-
-### 分解为端对端测试
-
-解释这些测试是什么以及为什么要做这些测试
-
-- 我是个栗子
-- 我也是个栗子
-- 我是栗子的哥哥
-
-### 代码风格测试
-
-解释这些测试是什么以及为什么要做这些测试
-
-- 我是个栗子
-- 我也是个栗子
-- 我是栗子的哥哥
 
 ## 部署
 
@@ -58,9 +39,6 @@
 * [Maven](https://maven.apache.org/) - 依赖属性管理
 * [ROME](https://rometools.github.io/rome/) - 生成RSS源
 
-## 贡献者
-
-请阅读 [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) 查阅为该项目做出贡献的开发者。
 
 ## 版本控制
 
@@ -68,13 +46,9 @@
 
 ## 作者
 
-作者：qulongjun
+作者：jhp
 
-您也可以在 [contributors](https://github.com/your/project/contributors) 参看所有参与该项目的开发者。
-
-## 版权说明
-
-该项目签署了MIT 授权许可，详情请参阅 [LICENSE.md](LICENSE.md) 。
+您也可以在 [contributors](https://github.com/liuxing2001/CloudMusic/contributors) 参看所有参与该项目的开发者。
 
 ## 鸣谢
 
