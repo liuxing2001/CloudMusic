@@ -37,12 +37,15 @@ class MusicService : Service() {
     override fun onCreate() {
         super.onCreate()
 
+        println("service服务成功创建了~~~~~~~")
+
         //创建BroadcastReceiver
         serviceReceiver = MyReceiver()
+
         //创建IntentFilter
-        val filter = IntentFilter();
-        filter.addAction(PlayerActivity.CTL_ACTION);
-        registerReceiver(serviceReceiver, filter);
+        val filter = IntentFilter()
+        filter.addAction(PlayerActivity.CTL_ACTION)
+        registerReceiver(serviceReceiver, filter)
     }
 
     private fun prepareAndPlay() {
@@ -62,15 +65,15 @@ class MusicService : Service() {
             shareViewModel.mediaPlayerList.add(info)
             shareViewModel.mediaPlayerList.let { playerController.addPlayList(it) }
             playerController.playMusicByInfo(info)
-        }else {
-            XToastUtils.info("暂无播放源，请切换其他歌曲");
+        } else {
+            XToastUtils.info("暂无播放源，请切换其他歌曲")
         }
     }
 
 
-
     inner class MyReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent) {
+            println("service层接收到广播..........")
             when (intent.getIntExtra("control", 2)) {
                 1 -> {
                     //上一首
@@ -87,14 +90,14 @@ class MusicService : Service() {
                 3 -> {
                     //判断传入的音乐是不是正在播放的音乐 ,是则暂停不是则添加
                     shareViewModel.getNowPlayInfo?.id.toString().apply {
-                        if (playerController.isCurrMusicIsPlayingMusic(this)) {
+                        status = if (playerController.isCurrMusicIsPlayingMusic(this)) {
                             //同源则暂停
                             playerController.pauseMusic()
-                            status = 15
+                            15
                         } else {
                             playerController.stopMusic()
                             prepareAndPlay()
-                            status = 12
+                            12
                         }
                     }
                 }

@@ -40,11 +40,12 @@ class PlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         initBinding()
         initBar()
-        initListener()
         initBroadcastReceiver()
+        initListener()
     }
 
     private fun initListener() {
+        val intent = Intent(CTL_ACTION)
         Timer().schedule(200) {
             createPlay(intent)
         }
@@ -59,18 +60,20 @@ class PlayerActivity : AppCompatActivity() {
         setContentView(binding.root)
         StatusBarUtils.translucent(this, Color.TRANSPARENT)
     }
+
     private fun createPlay(intent: Intent) {
         val status = shareViewModel.getPlayStatus
         if (status == 11 || status == 15) {
             //没有播放或暂停时去播放
-            intent.putExtra("control", 2);
+            intent.putExtra("control", 2)
         } else if (status == 12) {
             //正在播放
-            intent.putExtra("control", 3);
+            intent.putExtra("control", 3)
         }
-        sendBroadcast(intent);
+        sendBroadcast(intent)
     }
-   private fun initBroadcastReceiver() {
+
+    private fun initBroadcastReceiver() {
 
         // 创建广播过滤器，指定只接收android.net.conn.CONNECTIVITY_CHANGE的广播事件
         val intentFilter = IntentFilter()
@@ -82,6 +85,7 @@ class PlayerActivity : AppCompatActivity() {
         // 注册service
         val intent = Intent(this, MusicService::class.java)
         startService(intent)
+        println("执行到这里了............")
     }
 
     //自定义的BroadcastReceiver，负责监听接收从Service传回的广播
@@ -97,14 +101,15 @@ class PlayerActivity : AppCompatActivity() {
                 shareViewModel.setNowPlayerSong(obj)
                 shareViewModel.changeStatus(12)
             } else if (update == 12) {
-              //  startRotateAlways()
+                //  startRotateAlways()
                 shareViewModel.changeStatus(12)
             } else if (update == 15) {
-              //  pauseRotateAlways()
+                //  pauseRotateAlways()
                 shareViewModel.changeStatus(15)
             }
         }
     }
+
     companion object {
         const val CTL_ACTION = "com.jhp.cloudmusic.MUSIC_BROADCAST"
         const val UPDATE_ACTION = "com.jhp.cloudmusic.UPDATE_ACTION"

@@ -50,6 +50,10 @@
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.SplashActivity" />
+        <service
+            android:name=".service.MusicService"
+            android:enabled="true"
+            android:exported="false" />
 
         <meta-data
             android:name="android.max_aspect"
