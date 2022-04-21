@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@color/color_F71816"
+        app:srcCompat="@color/xui_transparent"
         tools:ignore="ContentDescription" />
 
     <!--  顶部标题 -->
@@ -68,12 +68,12 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/playerBg"
         app:layout_constraintTop_toTopOf="@+id/playerBg"
-        app:layout_constraintVertical_bias="0.200">
+        app:layout_constraintVertical_bias="0.36">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/play_disc"
-            android:layout_width="360dp"
-            android:layout_height="360dp"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_bottom_music" />
@@ -161,7 +161,7 @@
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutSong"
-        app:layout_constraintVertical_bias="0.982">
+        app:layout_constraintVertical_bias="1.0">
 
         <!--        <SeekBar-->
         <!--            android:id="@+id/musicSeekBar"-->
@@ -174,16 +174,17 @@
             android:layout_height="20dp"
             android:layout_marginTop="4dp"
             android:alpha="0.72"
+            android:background="@null"
             android:maxHeight="2dp"
             android:minHeight="4dp"
             android:progressDrawable="@drawable/background_seek_bar_music"
             android:splitTrack="false"
-            android:background="@null"
             android:thumb="@drawable/background_seek_bar_thumb"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,11 +193,11 @@
 
             <TextView
                 android:id="@+id/music_cur"
-                android:text="00:00:00"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:text="00:00:00" />
 
             <TextView
                 android:id="@+id/music_length"
@@ -219,7 +220,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/playerBg"
-        app:layout_constraintVertical_bias="0.963">
+        app:layout_constraintVertical_bias="1.0">
 
         <com.xuexiang.xui.widget.imageview.IconImageView
             android:layout_width="wrap_content"
@@ -231,38 +232,38 @@
 
         <com.xuexiang.xui.widget.imageview.IconImageView
             android:id="@+id/play_last"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
             android:layout_marginRight="20dp"
             android:tint="@color/white"
-            app:srcCompat="@drawable/icon_before_step" />
+            app:srcCompat="@mipmap/icon_before_step" />
 
         <com.xuexiang.xui.widget.imageview.IconImageView
             android:id="@+id/play_start"
-            android:layout_width="wrap_content"
-            android:layout_height="49dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:tint="@color/white"
-            app:srcCompat="@drawable/icon_music_play" />
+            app:srcCompat="@mipmap/icon_music_play" />
 
         <com.xuexiang.xui.widget.imageview.IconImageView
             android:id="@+id/play_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:tint="@color/white"
-            app:srcCompat="@drawable/icon_next_step" />
+            app:srcCompat="@mipmap/icon_next_step" />
 
         <com.xuexiang.xui.widget.imageview.IconImageView
             android:id="@+id/player_now_playlist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="55dp"
+            android:layout_marginLeft="45dp"
             android:tint="@color/white"
-            app:srcCompat="@drawable/icon_music_list" />
+            app:srcCompat="@mipmap/icon_music_list" />
 
 
     </LinearLayout>

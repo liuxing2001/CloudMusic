@@ -29,7 +29,7 @@ class PlayListActivity : AppCompatActivity() {
     private var mMiniLoadingDialog: MiniLoadingDialog? = null
 
     private val viewModel by lazy {
-        ViewModelProvider(this).get(PlayListViewModel::class.java)
+        ViewModelProvider(this)[PlayListViewModel::class.java]
     }
     private lateinit var adapter: KotlinDataAdapter<SongList.Song>
     private lateinit var _binding: ActivityPlayListBinding
@@ -42,12 +42,11 @@ class PlayListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initBinding()
         initData()
+        initView()
         initObserver()
         initBar()
-        initView()
     }
 
     @SuppressLint("SetTextI18n")
@@ -103,6 +102,7 @@ class PlayListActivity : AppCompatActivity() {
                 itemView.setOnClickListener {
                     val gson = Gson()
                     val obj = gson.fromJson(gson.toJson(itemData), NowPlayInfo::class.java)
+
                     sharedViewModel.setNowPlayerSong(obj)
                     sharedViewModel.setPlayerSongId(obj.id.toString())
                     sharedViewModel.playerSongUrlLiveData.observe(this@PlayListActivity) {
@@ -150,4 +150,5 @@ class PlayListActivity : AppCompatActivity() {
         mMiniLoadingDialog?.dismiss()
         super.onDestroy()
     }
+
 }

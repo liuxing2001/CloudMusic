@@ -57,17 +57,20 @@ class MusicTabFragment : Fragment() {
 
 
     private fun initListener() {
-        binding.musicTabHead.setOnClickListener {
-            goPlayerPage()
-        }
-        binding.musicTabPlay.setOnClickListener {
-            objectAnimator.resume()
+        binding.apply {
+            musicTabHead.setOnClickListener {
+                goPlayerPage()
+            }
+            musicTabPlay.setOnClickListener {
+                objectAnimator.resume()
 
-            val info = SongInfo()
-            info.songId = "111"
-            info.songUrl = "http://music.163.com/song/media/outer/url?id=317151.mp3"
-            StarrySky.with().playMusicByInfo(info)
+//            val info = SongInfo()
+//            info.songId = "111"
+//            info.songUrl = "http://music.163.com/song/media/outer/url?id=317151.mp3"
+//            StarrySky.with().playMusicByInfo(info)
+            }
         }
+
     }
 
 

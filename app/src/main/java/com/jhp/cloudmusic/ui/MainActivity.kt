@@ -23,6 +23,7 @@ import com.jhp.cloudmusic.ui.home.podcast.PodcastFragment
 
 import com.jhp.cloudmusic.ui.home.village.VillageFragment
 import com.jhp.cloudmusic.utils.StatusBarUtils
+import com.jhp.cloudmusic.viewmodel.SharedViewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,8 +33,6 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         initBinding()
         initListener()
         initPager()
@@ -41,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBinding() {
+        mainActivity = this
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
