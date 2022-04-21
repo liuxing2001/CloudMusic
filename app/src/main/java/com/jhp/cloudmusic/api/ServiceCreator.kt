@@ -56,6 +56,7 @@ class AppendUrlParamInterceptor : Interceptor {
         //3.追加信息时间戳,忽略缓存,但可能会触发 503 错误或者 ip 高频错误,目前还没遇到此问题
         val newUrl = builder
             .addQueryParameter("timestamp", "1503019930000")
+            .addQueryParameter("realIP","116.25.146.177")
             .build()
         //4.新的url创建新的request
         val newRequest = request.newBuilder()

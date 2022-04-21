@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.IBinder
+import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.NotificationTarget
@@ -22,7 +23,7 @@ import com.lzx.starrysky.StarrySky
  * @author : jhp
  * @date : 2022-04-11 14:43
  */
-class MusicService : Service() {
+class MusicService : LifecycleService() {
     private val shareViewModel =
         MainActivity.mainActivity?.let { ViewModelProvider(it)[SharedViewModel::class.java] }!!
     private var status = 11
@@ -30,14 +31,13 @@ class MusicService : Service() {
     private var playerController = StarrySky.with()
 
 
-    override fun onBind(p0: Intent?): IBinder? {
+    override fun onBind(intent: Intent): IBinder? {
+        super.onBind(intent)
         return null
     }
 
     override fun onCreate() {
         super.onCreate()
-
-        println("service服务成功创建了~~~~~~~")
 
         //创建BroadcastReceiver
         serviceReceiver = MyReceiver()
@@ -50,7 +50,9 @@ class MusicService : Service() {
 
     private fun prepareAndPlay() {
         //添加音乐播放路径实体类、音乐信息实体类到shareViewModel中
+
         val musicsUrl = shareViewModel.playerSongUrl.value?.data?.get(0)
+
         val musicInfo = shareViewModel.getNowPlayInfo!!
         if (musicsUrl?.url != null) {
             val info = SongInfo()
@@ -73,7 +75,6 @@ class MusicService : Service() {
 
     inner class MyReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent) {
-            println("service层接收到广播..........")
             when (intent.getIntExtra("control", 2)) {
                 1 -> {
                     //上一首
@@ -83,7 +84,11 @@ class MusicService : Service() {
                 }
                 2 -> {
                     //在播放状态、或者暂停状态
-                    if (status == 11 || !playerController.isPlaying()) prepareAndPlay()
+                    println("service中receiver下musicUrl是：${shareViewModel.playerSongUrl.value?.data?.get(0)}")
+                    if (status == 11 || !playerController.isPlaying()) {
+
+                        prepareAndPlay()
+                    }
                     else if (status == 15) playerController.restoreMusic()
                     status = 12
                 }

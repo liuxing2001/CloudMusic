@@ -113,6 +113,7 @@ class PlayListActivity : AppCompatActivity() {
                     }
                     val intent = Intent(this@PlayListActivity, PlayerActivity::class.java)
                     startActivity(intent)
+
                 }
             }
             .create()

@@ -1,6 +1,7 @@
 package com.jhp.cloudmusic.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -14,6 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.jhp.cloudmusic.databinding.ActivityMainBinding
+import com.jhp.cloudmusic.service.MusicService
 import com.jhp.cloudmusic.ui.common.adapter.MainViewPagerAdapter
 import com.jhp.cloudmusic.ui.common.mediator.BnvVp2Mediator
 import com.jhp.cloudmusic.ui.home.attention.AttentionFragment
@@ -37,6 +39,13 @@ class MainActivity : AppCompatActivity() {
         initListener()
         initPager()
         initView()
+        initService()
+    }
+
+    private fun initService() {
+        // 注册service
+        val intent = Intent(this, MusicService::class.java)
+        startService(intent)
     }
 
     private fun initBinding() {

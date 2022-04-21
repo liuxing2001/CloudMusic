@@ -59,12 +59,12 @@ dependencies {
     //      请求库及GSON解析日志
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6'
     //      liveData
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     //      协程
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1-native-mt'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1-native-mt'
     //      图片变圆
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //      Material组件库和ViewPager2
@@ -75,8 +75,8 @@ dependencies {
     //      mediaPlay播放插件 https://github.com/EspoirX/StarrySky
     implementation 'com.github.EspoirX:StarrySky:v2.6.5'
     //      glide
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.1'
     //      歌词控件
     implementation 'com.github.Moriafly:LyricViewX:1.2.1'
 }

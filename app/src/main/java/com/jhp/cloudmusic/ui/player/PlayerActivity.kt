@@ -39,16 +39,28 @@ class PlayerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initBinding()
-        initBar()
         initBroadcastReceiver()
         initListener()
+        initBar()
     }
 
     private fun initListener() {
         val intent = Intent(CTL_ACTION)
-        Timer().schedule(200) {
-            createPlay(intent)
+//        shareViewModel.playerSongUrlLiveData.observe(this) {
+//            val item = it.getOrNull()
+//            if (item != null) {
+//                shareViewModel.playerSongUrl.value = item
+//                createPlay(intent)
+//            }
+//        }
+
+
+        Timer().schedule(1000) {
+      //      println("playersongurl是~~~~： " + shareViewModel.playerSongUrl)
+
+           createPlay(intent)
         }
+
     }
 
     private fun initBar() {
@@ -74,7 +86,6 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     private fun initBroadcastReceiver() {
-
         // 创建广播过滤器，指定只接收android.net.conn.CONNECTIVITY_CHANGE的广播事件
         val intentFilter = IntentFilter()
         //指定BroadcastReceiver监听的Action
@@ -82,10 +93,6 @@ class PlayerActivity : AppCompatActivity() {
         musicBroadcastReceiver = MusicBroadcastReceiver()
         //注册BroadcastReceiver
         registerReceiver(musicBroadcastReceiver, intentFilter)
-        // 注册service
-        val intent = Intent(this, MusicService::class.java)
-        startService(intent)
-        println("执行到这里了............")
     }
 
     //自定义的BroadcastReceiver，负责监听接收从Service传回的广播
