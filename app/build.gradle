@@ -72,11 +72,15 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     //      XUI   https://github.com/xuexiangjys/XUI
     implementation 'com.github.xuexiangjys:XUI:1.1.9'
+
     //      mediaPlay播放插件 https://github.com/EspoirX/StarrySky
     implementation 'com.github.EspoirX:StarrySky:v2.6.5'
     //      glide
     implementation 'com.github.bumptech.glide:glide:4.13.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.1'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
     //      歌词控件
     implementation 'com.github.Moriafly:LyricViewX:1.2.1'
+    //      搜索框
+    implementation 'com.github.xiaoyou-xblog:SearchDialog:v2.2'
 }

@@ -101,8 +101,7 @@ class PlayListActivity : AppCompatActivity() {
                 //请求音乐源，将当前音乐信息保存到shareViewModel中，便于下个界面请求歌词等等
                 itemView.setOnClickListener {
                     val gson = Gson()
-                    val obj = gson.fromJson(gson.toJson(itemData), NowPlayInfo::class.java)
-
+                    val obj = gson.fromJson(gson.toJson(itemData),NowPlayInfo::class.java)
                     sharedViewModel.setNowPlayerSong(obj)
                     sharedViewModel.setPlayerSongId(obj.id.toString())
                     sharedViewModel.playerSongUrlLiveData.observe(this@PlayListActivity) {
@@ -113,7 +112,6 @@ class PlayListActivity : AppCompatActivity() {
                     }
                     val intent = Intent(this@PlayListActivity, PlayerActivity::class.java)
                     startActivity(intent)
-
                 }
             }
             .create()

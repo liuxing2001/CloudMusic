@@ -29,7 +29,7 @@ object ServiceCreator {
     }
 
     //项目已经部署在vercel上
-    private const val BASE_URL = "https://music-jhp-top.vercel.app/"
+    private const val BASE_URL = "https://music.gspguoguo.top"
 
     // Retrofit构造器 生成Retrofit实例
     private val retrofit = Retrofit.Builder()

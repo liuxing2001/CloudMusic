@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable-v24/bg_bottom_sheet.xml" value="0.187" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable-v24/bg_home_tiyan.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2275" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable-v24/ic_menu_search.xml" value="0.198" />
@@ -43,6 +44,8 @@
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_player.xml" value="0.264" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/app_bar_main.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/big_notification.xml" value="0.15081521739130435" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/bottom_sheet_dialog_list.xml" value="0.15081521739130435" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/content_main.xml" value="0.1743659420289855" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_dashboard.xml" value="0.1743659420289855" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_gallery.xml" value="0.1743659420289855" />

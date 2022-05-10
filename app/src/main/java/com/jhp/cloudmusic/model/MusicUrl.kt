@@ -20,7 +20,7 @@ data class MusicUrl(
         val freeTimeTrialPrivilege: FreeTimeTrialPrivilege,
         val freeTrialInfo: Any,
         val freeTrialPrivilege: FreeTrialPrivilege,
-        val gain: Int,
+        val gain: String,
         val id: Int,
         val level: String,
         val md5: String,

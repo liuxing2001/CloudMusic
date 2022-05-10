@@ -34,7 +34,7 @@
         android:padding="6dp">
 
         <TextView
-            android:id="@+id/viewpager_list_toptext"
+            android:id="@+id/music_tab_title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -46,7 +46,7 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/viewpager_list_bottom_text"
+            android:id="@+id/music_tab_subtitle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

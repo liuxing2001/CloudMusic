@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initService() {
+
         // 注册service
         val intent = Intent(this, MusicService::class.java)
         startService(intent)
