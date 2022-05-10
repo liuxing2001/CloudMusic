@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="Vm"
+            type="com.jhp.cloudmusic.ui.home.discovery.tab_layout.DiscoveryFragmentTwoViewModel" />
+
+        <variable
+            name="vm"
+            type="Vm" />
+    </data>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        app:onRefreshListener="@{() -> vm.getTopList()}"
+        app:refreshing="@{vm.loading}"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hot_song_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/layout_hotsong_item" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

@@ -24,19 +24,21 @@
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2275" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2275" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2275" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/icon_arrow_right_grey.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/icon_before_step.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/icon_more.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/icon_music_cloud.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/icon_music_list.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/icon_music_msg.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/icon_music_repeat.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/shape_album_loading_bg.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/drawable/side_nav_bar.xml" value="0.2275" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout-w1240dp/activity_login2.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout-w936dp/fragment_music_tab_bar2.xml" value="0.31640625" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout-w936dp/layout_item_song_card.xml" value="0.152" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_login2.xml" value="0.264" />
-        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_main2.xml" value="0.13858695652173914" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_music_service_layout.xml" value="0.2" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/activity_phone_login.xml" value="0.264" />
@@ -48,20 +50,25 @@
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/bottom_sheet_dialog_list.xml" value="0.15081521739130435" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/content_main.xml" value="0.1743659420289855" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_dashboard.xml" value="0.1743659420289855" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_discovery.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_discovery_two.xml" value="0.16347124117053483" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_gallery.xml" value="0.1743659420289855" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_home.xml" value="0.1743659420289855" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_mine.xml" value="0.264" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_more.xml" value="0.16347124117053483" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_music_tab.xml" value="0.4" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_music_tab_bar.xml" value="0.536" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_notifications.xml" value="0.1743659420289855" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_podcast.xml" value="0.1" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_slideshow.xml" value="0.1743659420289855" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/fragment_village.xml" value="0.10898082744702321" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/layout_hotsong_item.xml" value="0.33" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/layout_hotsong_song_item.xml" value="0.16347124117053483" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/layout_item_song_card.xml" value="0.2" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/layout_main_content.xml" value="0.2" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/layout_song_item.xml" value="0.2" />
-        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/nav_header_main.xml" value="0.13043478260869565" />
-        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/activity_main_drawer.xml" value="0.225" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/layout/nav_header_main.xml" value="0.5" />
+        <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/activity_main_drawer.xml" value="0.67" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/bottom_nav_menu.xml" value="0.225" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/main.xml" value="0.225" />
         <entry key="..\:/WorkSpace/CloudMusic/app/src/main/res/menu/main_activity2.xml" value="0.21666666666666667" />

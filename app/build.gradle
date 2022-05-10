@@ -68,7 +68,7 @@ dependencies {
     //      图片变圆
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //      Material组件库和ViewPager2
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     //      XUI   https://github.com/xuexiangjys/XUI
     implementation 'com.github.xuexiangjys:XUI:1.1.9'
@@ -83,4 +83,7 @@ dependencies {
     implementation 'com.github.Moriafly:LyricViewX:1.2.1'
     //      搜索框
     implementation 'com.github.xiaoyou-xblog:SearchDialog:v2.2'
+
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+
 }

@@ -72,11 +72,15 @@ class PlayerActivity : AppCompatActivity() {
         initBroadcastReceiver()
         initListener()
         initObserver()
-
+        initBar()
 
     }
 
-     private fun initBinding() {
+    private fun initBar() {
+        StatusBarUtils.setStatusBarDarkMode(this)
+    }
+
+    private fun initBinding() {
 
         _binding = ActivityPlayerBinding.inflate(layoutInflater)
         params = intent.getStringExtra("MusicTab")
@@ -241,7 +245,7 @@ class PlayerActivity : AppCompatActivity() {
      */
     private fun initListener() {
 
-        val intent: Intent = Intent(CTL_ACTION)
+        val intent = Intent(CTL_ACTION)
         binding.apply {
             // 转盘点击
             discContainer.setOnClickListener {
@@ -314,8 +318,6 @@ class PlayerActivity : AppCompatActivity() {
             //正在播放
             intent.putExtra("control", 3);
         }
-        println("~~~playerActivity发送之前url是${shareViewModel.playerSongUrlLiveData.value}")
-
         sendBroadcast(intent)
     }
 
@@ -329,8 +331,8 @@ class PlayerActivity : AppCompatActivity() {
         //注册BroadcastReceiver
         registerReceiver(musicBroadcastReceiver, intentFilter)
         // 注册service
-//        val intent = Intent(this, MusicService::class.java)
-//        startService(intent)
+        val intent = Intent(this, MusicService::class.java)
+        startService(intent)
     }
 
     //自定义的BroadcastReceiver，负责监听接收从Service传回的广播

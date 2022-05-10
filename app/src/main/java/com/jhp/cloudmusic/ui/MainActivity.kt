@@ -2,21 +2,19 @@ package com.jhp.cloudmusic.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
-import android.view.View
-import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.bumptech.glide.Glide
+import com.jhp.cloudmusic.R
+import com.jhp.cloudmusic.dao.UserInfoDao
 import com.jhp.cloudmusic.databinding.ActivityMainBinding
-import com.jhp.cloudmusic.service.MusicService
-import com.jhp.cloudmusic.ui.common.adapter.MainViewPagerAdapter
+import com.jhp.cloudmusic.ui.common.adapter.ViewPage2Adapter
 import com.jhp.cloudmusic.ui.common.mediator.BnvVp2Mediator
 import com.jhp.cloudmusic.ui.home.attention.AttentionFragment
 import com.jhp.cloudmusic.ui.home.discovery.DiscoveryFragment
@@ -24,12 +22,12 @@ import com.jhp.cloudmusic.ui.home.mine.MineFragment
 import com.jhp.cloudmusic.ui.home.podcast.PodcastFragment
 
 import com.jhp.cloudmusic.ui.home.village.VillageFragment
-import com.jhp.cloudmusic.utils.StatusBarUtils
-import com.jhp.cloudmusic.viewmodel.SharedViewModel
+import com.jhp.cloudmusic.ui.login.LoginActivity
+import com.jhp.cloudmusic.utils.XToastUtils
 
 
 class MainActivity : AppCompatActivity() {
-
+    private var userInfo = UserInfoDao.getUserInfo()
     private lateinit var binding: ActivityMainBinding
 
     @RequiresApi(Build.VERSION_CODES.R)
@@ -39,15 +37,10 @@ class MainActivity : AppCompatActivity() {
         initListener()
         initPager()
         initView()
-        initService()
+
     }
 
-    private fun initService() {
 
-        // 注册service
-        val intent = Intent(this, MusicService::class.java)
-        startService(intent)
-    }
 
     private fun initBinding() {
         mainActivity = this
@@ -71,10 +64,38 @@ class MainActivity : AppCompatActivity() {
 
     //初始化Drawer
     @RequiresApi(Build.VERSION_CODES.R)
-    private fun initView() {
-        //初始化状态栏字体为黑色，背景为白色
-        StatusBarUtils.setStatusBarLightMode(this)
+     fun initView() {
 
+        val navigationView = binding.navView
+        val headerLayout = navigationView.getHeaderView(0)
+        val headImg = headerLayout.findViewById(R.id.nav_header_img) as ImageView
+        val name = headerLayout.findViewById(R.id.nav_header_username) as TextView
+        val sign = headerLayout.findViewById(R.id.nav_header_sign) as TextView
+        name.text = userInfo.profile.nickname
+        sign.text = userInfo.profile.signature
+        Glide.with(this).load(userInfo.profile.avatarUrl).into(headImg)
+        navigationView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+//                R.id.nav_setting -> {
+//                    val intent = Intent(this, SettingActivity::class.java)
+//                    startActivity(intent)
+//                }
+                R.id.nav_logoOut -> {
+                    try {
+                        UserInfoDao.logout()
+                        val intent = Intent(
+                            this,
+                            LoginActivity::class.java
+                        ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                    } catch (e: Exception) {
+                        XToastUtils.error("退出失败");
+                    }
+                }
+                else -> XToastUtils.error("该功能尚未开发");
+            }
+            false
+        }
     }
 
     //初始化viewpager
@@ -87,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             INDEX_VILLAGE to VillageFragment()
         )
         binding.apply {
-            includeMain.vp2Main.adapter = MainViewPagerAdapter(this@MainActivity, fragments)
+            includeMain.vp2Main.adapter = ViewPage2Adapter(this@MainActivity, fragments)
 
             BnvVp2Mediator(includeMain.bnvMain, includeMain.vp2Main) { _, vp2 ->
                 vp2.isUserInputEnabled = true// 设置是否响应用户滑动

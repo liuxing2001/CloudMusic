@@ -1,22 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.discovery.DiscoveryFragment">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        app:elevation="0dp"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:theme="@style/AppTheme.AppBarOverlay">-->
+
+    <!--        &lt;!&ndash;        app:navigationIcon="@drawable/xui_ic_navigation_back_white"&ndash;&gt;-->
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            app:title="@string/menu_trending"-->
+    <!--            android:id="@+id/toolbar"-->
+    <!--            app:popupTheme="@style/AppTheme.PopupOverlay"-->
+    <!--            app:titleTextColor="@color/xui_config_color_white"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:background="?attr/colorPrimary"-->
+    <!--            android:visibility="visible" />-->
+
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+    <!-- TabLayout   -->
+    <com.jhp.cloudmusic.ui.common.adapter.ViewPager2Container
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/discovery_fragment_tab"
+                style="@style/TabLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/xui_actionbar_height"
+                android:background="@color/xui_config_color_white"
+                app:tabMode="fixed"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </androidx.cardview.widget.CardView>
+        <!--  ViewPager，页面填充页  -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/discovery_fragment_viewPage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.jhp.cloudmusic.ui.common.adapter.ViewPager2Container>
+
+
+</LinearLayout>
