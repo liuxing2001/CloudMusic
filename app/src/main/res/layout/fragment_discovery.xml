@@ -25,9 +25,7 @@
 
     <!--    </com.google.android.material.appbar.AppBarLayout>-->
     <!-- TabLayout   -->
-    <com.jhp.cloudmusic.ui.common.adapter.ViewPager2Container
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -42,6 +40,9 @@
                 app:tabMode="fixed"
                 tools:ignore="SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
+    <com.jhp.cloudmusic.ui.common.adapter.ViewPager2Container
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <!--  ViewPager，页面填充页  -->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/discovery_fragment_viewPage"

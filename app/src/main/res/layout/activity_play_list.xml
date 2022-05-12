@@ -231,7 +231,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <Toolbar
+                <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar_gedan_detail"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
@@ -289,7 +289,7 @@
                             android:textSize="8sp"
                             android:visibility="invisible" />
                     </RelativeLayout>
-                </Toolbar>
+                </androidx.appcompat.widget.Toolbar>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 

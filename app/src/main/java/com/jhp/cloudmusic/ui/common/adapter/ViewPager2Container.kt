@@ -8,12 +8,10 @@ import androidx.viewpager2.widget.ViewPager2
 import kotlin.math.abs
 
 
-class ViewPager2Container @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0):RelativeLayout(context, attrs, defStyleAttr) {
+class ViewPager2Container @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : RelativeLayout(context, attrs, defStyleAttr) {
 
     private var mViewPager2: ViewPager2? = null
-
     private var disallowParentInterceptDownEvent = true
-
     private var startX = 0
     private var startY = 0
 
@@ -27,12 +25,14 @@ class ViewPager2Container @JvmOverloads constructor(context: Context, attrs: Att
             }
         }
         if (mViewPager2 == null) {
-            throw IllegalStateException("The root child of com.jhp.cloudmusic.ui.common.adapter.ViewPager2Container must contains a ViewPager2")
+            throw IllegalStateException("The root child of ViewPager2Container must contains a ViewPager2")
         }
     }
 
     override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
-        val doNotNeedIntercept = (!mViewPager2!!.isUserInputEnabled|| (mViewPager2?.adapter != null&&mViewPager2?.adapter!!.itemCount <= 1))
+        val doNotNeedIntercept = (!mViewPager2!!.isUserInputEnabled
+                || (mViewPager2?.adapter != null
+                && mViewPager2?.adapter!!.itemCount <= 1))
         if (doNotNeedIntercept) {
             return super.onInterceptTouchEvent(ev)
         }
@@ -47,50 +47,52 @@ class ViewPager2Container @JvmOverloads constructor(context: Context, attrs: Att
                 val endY = ev.y.toInt()
                 val disX = abs(endX - startX)
                 val disY = abs(endY - startY)
-                if (mViewPager2!!.orientation ==
-                    ViewPager2.ORIENTATION_VERTICAL) {
+                if (mViewPager2!!.orientation == ViewPager2.ORIENTATION_VERTICAL) {
                     onVerticalActionMove(endY, disX, disY)
                 } else if (mViewPager2!!.orientation == ViewPager2.ORIENTATION_HORIZONTAL) {
                     onHorizontalActionMove(endX, disX, disY)
                 }
             }
-            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL ->
-                parent.requestDisallowInterceptTouchEvent(false)
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> parent.requestDisallowInterceptTouchEvent(false)
         }
         return super.onInterceptTouchEvent(ev)
     }
 
     private fun onHorizontalActionMove(endX: Int, disX: Int, disY: Int) {
-        if (mViewPager2?.adapter == null) {    return}
+        if (mViewPager2?.adapter == null) {
+            return
+        }
         if (disX > disY) {
             val currentItem = mViewPager2?.currentItem
             val itemCount = mViewPager2?.adapter!!.itemCount
             if (currentItem == 0 && endX - startX > 0) {
                 parent.requestDisallowInterceptTouchEvent(false)
             } else {
-                parent.requestDisallowInterceptTouchEvent(currentItem != itemCount - 1|| endX - startX >= 0)
+                parent.requestDisallowInterceptTouchEvent(currentItem != itemCount - 1
+                        || endX - startX >= 0)
             }
         } else if (disY > disX) {
             parent.requestDisallowInterceptTouchEvent(false)
         }
     }
 
-
     private fun onVerticalActionMove(endY: Int, disX: Int, disY: Int) {
-        if (mViewPager2?.adapter == null) {return}
+        if (mViewPager2?.adapter == null) {
+            return
+        }
         val currentItem = mViewPager2?.currentItem
         val itemCount = mViewPager2?.adapter!!.itemCount
         if (disY > disX) {
             if (currentItem == 0 && endY - startY > 0) {
                 parent.requestDisallowInterceptTouchEvent(false)
             } else {
-                parent.requestDisallowInterceptTouchEvent(currentItem != itemCount - 1 || endY - startY >= 0)
+                parent.requestDisallowInterceptTouchEvent(currentItem != itemCount - 1
+                        || endY - startY >= 0)
             }
         } else if (disX > disY) {
             parent.requestDisallowInterceptTouchEvent(false)
         }
     }
-
 
     /**
      * 设置是否允许在当前View的{@link MotionEvent#ACTION_DOWN}事件中禁止父View对事件的拦截，该方法

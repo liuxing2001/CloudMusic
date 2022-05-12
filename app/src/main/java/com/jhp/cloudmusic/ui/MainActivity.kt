@@ -2,6 +2,7 @@ package com.jhp.cloudmusic.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
@@ -37,9 +38,12 @@ class MainActivity : AppCompatActivity() {
         initListener()
         initPager()
         initView()
-
+        initBar()
     }
 
+    private fun initBar() {
+        window.statusBarColor = Color.WHITE
+    }
 
 
     private fun initBinding() {
@@ -108,6 +112,7 @@ class MainActivity : AppCompatActivity() {
             INDEX_VILLAGE to VillageFragment()
         )
         binding.apply {
+            includeMain.vp2Main.requestDisallowInterceptTouchEvent(false)
             includeMain.vp2Main.adapter = ViewPage2Adapter(this@MainActivity, fragments)
 
             BnvVp2Mediator(includeMain.bnvMain, includeMain.vp2Main) { _, vp2 ->

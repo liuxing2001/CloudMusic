@@ -23,6 +23,8 @@ class BnvVp2Mediator(
         bnv.menu.forEachIndexed { index, item ->
             map[item] = index
         }
+
+
     }
 
     /**
