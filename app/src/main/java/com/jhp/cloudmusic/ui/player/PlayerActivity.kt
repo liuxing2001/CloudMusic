@@ -25,6 +25,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.dirror.lyricviewx.OnPlayClickListener
 import com.dirror.lyricviewx.OnSingleClickListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.gyf.immersionbar.ImmersionBar
 import com.jhp.cloudmusic.R
 
 import com.jhp.cloudmusic.databinding.ActivityPlayerBinding

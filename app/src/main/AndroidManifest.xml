@@ -21,13 +21,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.playlist.PlayListActivity"
-            android:theme="@style/AppTheme"
+            android:name=".ui.search.SearchActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.playlist.PlayListActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".ui.player.PlayerActivity"
-            android:theme="@style/AppTheme"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
@@ -51,22 +54,24 @@
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.SplashActivity" />
+
         <service
             android:name=".service.MusicService"
             android:enabled="true"
-            android:exported="true" />
-        <!--通知栏广播 -->
-        <receiver android:name=".NotificationReceiver"
+            android:exported="true" /> <!-- 通知栏广播 -->
+        <receiver
+            android:name=".NotificationReceiver"
             android:enabled="true"
             android:exported="true"
             android:permission="TODO">
             <intent-filter>
-                <action android:name="notification_cancelled"/>
-                <action android:name="next"/>
-                <action android:name="stop"/>
-                <action android:name="last"/>
+                <action android:name="notification_cancelled" />
+                <action android:name="next" />
+                <action android:name="stop" />
+                <action android:name="last" />
             </intent-filter>
         </receiver>
+
         <meta-data
             android:name="android.max_aspect"
             android:value="2.4" /> <!-- 适配华为（huawei）刘海屏 -->

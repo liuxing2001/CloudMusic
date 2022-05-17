@@ -24,13 +24,14 @@ import com.jhp.cloudmusic.ui.home.podcast.PodcastFragment
 
 import com.jhp.cloudmusic.ui.home.village.VillageFragment
 import com.jhp.cloudmusic.ui.login.LoginActivity
+import com.jhp.cloudmusic.ui.search.SearchActivity
 import com.jhp.cloudmusic.utils.XToastUtils
+import com.xiaoyouProject.searchbox.SearchFragment
 
 
 class MainActivity : AppCompatActivity() {
     private var userInfo = UserInfoDao.getUserInfo()
     private lateinit var binding: ActivityMainBinding
-
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +58,19 @@ class MainActivity : AppCompatActivity() {
             setNavigationOnClickListener {
                 openDraw()
             }
+        }
+        binding.includeMain.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.action_search -> {
+                    val intent = Intent(this,SearchActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            false
+        }
+        binding.includeMain.tvSearch.setOnClickListener{
+            val intent = Intent(this,SearchActivity::class.java)
+            startActivity(intent)
         }
     }
 
