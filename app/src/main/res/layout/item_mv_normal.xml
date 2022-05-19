@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_hotSong_card"
+    style="@style/CardView.Light"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_marginVertical="10dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+        <ImageView
+            android:id="@+id/iv_item_mv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="6dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/bg_wind" />
+
+        <TextView
+            android:id="@+id/tv_item_mv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/iv_item_mv_cover"
+            android:layout_alignBottom="@+id/iv_item_mv_cover"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="04:00"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+        <ImageView
+            android:id="@+id/iv_play_num"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_alignTop="@+id/tv_item_mv_playnum"
+            android:layout_alignBottom="@+id/tv_item_mv_playnum"
+            android:layout_marginTop="3dp"
+            android:layout_toLeftOf="@+id/tv_item_mv_playnum"
+            android:src="@drawable/ic_song_play_num" />
+
+        <TextView
+            android:id="@+id/tv_item_mv_playnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/iv_item_mv_cover"
+            android:layout_marginRight="5dp"
+            android:text="11万"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+
+        <TextView
+            android:id="@+id/tv_item_mv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_item_mv_cover"
+            android:layout_alignLeft="@+id/iv_item_mv_cover"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="MV名称"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_item_mv_creator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_mv_name"
+            android:layout_alignLeft="@+id/iv_item_mv_cover"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="MV作者"
+            android:textSize="11sp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

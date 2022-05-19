@@ -18,6 +18,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/find_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/layout_item_song_card" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

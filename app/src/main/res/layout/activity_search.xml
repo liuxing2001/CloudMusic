@@ -6,58 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchActivity">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:theme="@style/Theme.CloudMusic.AppBarOverlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:orientation="horizontal">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:gravity="center"
+            app:menu="@menu/menu_search"
+            app:navigationIcon="@mipmap/ic_left_arrow_black"
+            app:popupTheme="@style/Theme.CloudMusic.PopupOverlay">
 
-            <ImageView
-                android:id="@+id/img_suggest_back"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/left_arrow" />
+            <LinearLayout
+                android:id="@+id/tv_search"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/text_corner"
+                android:gravity="center">
 
-            <EditText
-                android:id="@+id/tv_search_keyword"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="7"
-                android:background="@null"
-                android:gravity="bottom"
-                android:imeOptions="actionSearch"
-                android:inputType="text"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:text="居中"
+                    android:textColor="#000000"
+                    app:drawableLeftCompat="@mipmap/ic_search" />
+            </LinearLayout>
 
-        </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/darkgray" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_suggest_list"
-            linearAdapter="@{vm.adapter}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

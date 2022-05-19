@@ -12,6 +12,8 @@
     <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
     <color name="colorAccent">#299EE3</color>
     <color name="loading">#cdcdcd</color>
+    <color name="app_background">#1111</color>
+
 
     <color name="white">#FFFFFF</color>
     <!-- 白色 -->

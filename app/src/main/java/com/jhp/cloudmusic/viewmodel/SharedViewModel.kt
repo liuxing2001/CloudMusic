@@ -57,4 +57,14 @@ class SharedViewModel : ViewModel() {
     fun changeStatus(data: Int) {
         playStatus.value = data
     }
+    //搜索功能
+    private val keyword = MutableLiveData<String>()
+    val keyWordLiveData = Transformations.switchMap(keyword) {
+        Repository.search(it)
+    }
+    fun  searchKeyword(data: String){
+        keyword.value = data
+    }
+    val getSearchKey: String?
+        get() = keyword.value
 }

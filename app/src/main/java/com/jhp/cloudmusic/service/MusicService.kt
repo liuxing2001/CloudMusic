@@ -57,8 +57,11 @@ class MusicService : Service() {
 
     private fun prepareAndPlay() {
         //添加音乐播放路径实体类、音乐信息实体类到shareViewModel中
+
         val musicsUrl = shareViewModel.playerSongUrl.value?.data?.get(0)
+
         val musicInfo = shareViewModel.getNowPlayInfo!!
+
         if (musicsUrl?.url != null) {
             val info = SongInfo()
             info.apply {

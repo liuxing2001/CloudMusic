@@ -17,8 +17,11 @@ interface UserService {
         @Query("phone") phone: String,
         @Query("md5_password") md5_password: String
     ): Call<UserInfo>
+    //搜索建议
+    @GET("/search/suggest")
+    fun getSearchSuggest(@Query("keywords") keywords: String):Call<SearchSuggest>
     // 搜索接口
-    @GET("/search")
+    @GET("/cloudsearch")
     fun search(@Query("keywords") keywords: String): Call<SearchSongs>
 
     // 获取用户歌单
@@ -48,4 +51,24 @@ interface UserService {
     //榜单内容摘要
     @GET("/toplist/detail")
     fun getTopList(): Call<HotTopList>
+
+    //获取推荐MV
+    @GET("/mv/all")
+    fun getMvList(): Call<MVList>
+
+    //获取MV url
+    @GET("/mv/url")
+    fun getMvUrl(@Query("id") id: String): Call<MVUrl>
+
+    //获取MV点赞转发评论数
+    @GET("/mv/detail/info")
+    fun getMvCountDetail(@Query("mvid") id: String): Call<MVCountDetail>
+
+    //获取MV评论
+    @GET("/comment/mv")
+    fun getMvComment(@Query("id") id: String): Call<MusicComment>
+
+    //获取歌单 (网友精选碟)
+    @GET(" /top/playlist")
+    fun getHotPlayList(): Call<HotPlayList>
 }

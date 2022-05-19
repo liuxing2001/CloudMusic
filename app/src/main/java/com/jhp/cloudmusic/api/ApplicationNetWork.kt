@@ -20,6 +20,7 @@ object ApplicationNetWork {
     private val UserService = ServiceCreator.create(UserService::class.java)
     suspend fun login(data: LoginUser) = UserService.login(data.userName, data.md5_password).await()
     suspend fun search(data: String) = UserService.search(data).await()
+    suspend fun getSearchSuggest(data: String) = UserService.getSearchSuggest(data).await()
     suspend fun getPlayList(data: String) = UserService.getPlayList(data).await()
     suspend fun getPlayListTrack(data: String) = UserService.getPlayListTrack(data, 100).await()
     suspend fun getRecommendSongs() = UserService.getRecommendSongs().await()
@@ -27,7 +28,11 @@ object ApplicationNetWork {
     suspend fun getMusicUrl(id: String) = UserService.getMusicUrl(id).await()
     suspend fun getMusicComment(id: String) = UserService.getComment(id).await()
     suspend fun getTopList() = UserService.getTopList().await()
-
+    suspend fun getMvList() = UserService.getMvList().await()
+    suspend fun getMvUrl(id: String) = UserService.getMvUrl(id).await()
+    suspend fun getMvCountDetail(id: String) = UserService.getMvCountDetail(id).await()
+    suspend fun getMvComment(id: String) = UserService.getMvComment(id).await()
+    suspend fun getHotPlayList() = UserService.getHotPlayList().await()
 
     //这里采用协程异步调用的方式,统一了网络服务的接口,因此所有API都定义为挂起函数
     private suspend fun <T> Call<T>.await(): T {

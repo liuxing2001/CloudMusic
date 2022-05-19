@@ -7,10 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.jhp.cloudmusic.model.HotTopList
 import com.jhp.cloudmusic.repository.Repository
 
-/**
- * @author GuoGuo
- * @date 2022/1/26
- */
+
 class DiscoveryFragmentTwoViewModel : ViewModel() {
     private val type = MutableLiveData<String>()
     private val hotTopData = ArrayList<HotTopList.HopTopDetail>()

@@ -32,7 +32,7 @@ class DiscoveryFragmentTwo : Fragment() {
         get() = _binding
 
     private val viewModel by lazy {
-        ViewModelProvider(this).get(DiscoveryFragmentTwoViewModel::class.java)
+        ViewModelProvider(this)[DiscoveryFragmentTwoViewModel::class.java]
     }
 
     override fun onCreateView(

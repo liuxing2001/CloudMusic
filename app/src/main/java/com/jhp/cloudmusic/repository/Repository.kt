@@ -43,7 +43,12 @@ object Repository {
         if (res.code == 200) Result.success(res.result.songs)
         else Result.failure(RuntimeException("response status is ${res.code}"))
     }
-
+    //搜索建议
+//    fun getSearchSuggest(data: String) = fire(Dispatchers.IO){
+//        val res = ApplicationNetWork.getSearchSuggest(data)
+//        if (res.code == 200) Result.success(res.result.allMatches)
+//        else Result.failure(RuntimeException("response status is ${res.code}"))
+//    }
     //获取用户歌单
     fun getPlayList(data: String) = fire(Dispatchers.IO) {
         val res = ApplicationNetWork.getPlayList(data)
@@ -86,10 +91,45 @@ object Repository {
         else Result.failure(RuntimeException("response status is ${res.code}"))
     }
 
-    //获取评论
+    //获取排行榜
     fun getTopList() = fire(Dispatchers.IO){
         val res = ApplicationNetWork.getTopList()
         if (res.code == 200) Result.success(res)
         else Result.failure(RuntimeException("response status is ${res.code}"))
     }
+    //获取MV列表
+    fun getMvList() = fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getMvList()
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取MV url
+    fun getMvUrl(id:String) = fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getMvUrl(id)
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取MV 点赞评论数
+    fun getMvCountDetail(id:String) = fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getMvCountDetail(id)
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取MV评论
+    fun getMvComment(id:String) = fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getMvComment(id)
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
+    //获取歌单 (网友精选碟)
+    fun getHotPlayList()= fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getHotPlayList()
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+
 }

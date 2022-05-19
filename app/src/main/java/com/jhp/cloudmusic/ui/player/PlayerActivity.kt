@@ -298,7 +298,7 @@ class PlayerActivity : AppCompatActivity() {
             //向service发送下一首指令
             playNext.setOnClickListener {
                 intent.putExtra("control", 4)
-                sendBroadcast(intent);
+                sendBroadcast(intent)
             }
             //根据传递的参数判断是从music_tab 进来的还是，从播放歌单进来的
             if(params !="yes"){
