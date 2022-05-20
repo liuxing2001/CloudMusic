@@ -18,8 +18,7 @@ import com.google.gson.Gson
 import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.dao.UserInfoDao
 import com.jhp.cloudmusic.databinding.ActivityMainBinding
-import com.jhp.cloudmusic.model.NowPlayInfo
-import com.jhp.cloudmusic.service.MusicService
+import com.jhp.cloudmusic.data.model.NowPlayInfo
 import com.jhp.cloudmusic.ui.common.adapter.ViewPage2Adapter
 import com.jhp.cloudmusic.ui.common.mediator.BnvVp2Mediator
 import com.jhp.cloudmusic.ui.home.attention.AttentionFragment
@@ -30,11 +29,7 @@ import com.jhp.cloudmusic.ui.home.podcast.PodcastFragment
 import com.jhp.cloudmusic.ui.home.village.VillageFragment
 import com.jhp.cloudmusic.ui.login.LoginActivity
 import com.jhp.cloudmusic.ui.player.PlayerActivity
-import com.jhp.cloudmusic.ui.search.SearchActivity
 import com.jhp.cloudmusic.utils.XToastUtils
-import com.jhp.cloudmusic.viewmodel.SharedViewModel
-import com.lzx.starrysky.StarrySky
-import com.lzx.starrysky.utils.contextReflex
 import com.xiaoyouProject.searchbox.SearchFragment
 import com.xiaoyouProject.searchbox.custom.IOnSearchClickListener
 import com.xiaoyouProject.searchbox.entity.CustomLink

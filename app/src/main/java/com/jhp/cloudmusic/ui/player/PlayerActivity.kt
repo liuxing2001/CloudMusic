@@ -5,10 +5,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.LinearInterpolator
@@ -25,18 +23,17 @@ import com.bumptech.glide.request.RequestOptions
 import com.dirror.lyricviewx.OnPlayClickListener
 import com.dirror.lyricviewx.OnSingleClickListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.gyf.immersionbar.ImmersionBar
 import com.jhp.cloudmusic.R
 
 import com.jhp.cloudmusic.databinding.ActivityPlayerBinding
-import com.jhp.cloudmusic.extension.goneAlphaAnimation
-import com.jhp.cloudmusic.extension.toMinAndSeconds
-import com.jhp.cloudmusic.extension.visibleAlphaAnimation
+import com.jhp.cloudmusic.utils.extension.goneAlphaAnimation
+import com.jhp.cloudmusic.utils.extension.toMinAndSeconds
+import com.jhp.cloudmusic.utils.extension.visibleAlphaAnimation
 import com.jhp.cloudmusic.service.MusicService
 import com.jhp.cloudmusic.ui.MainActivity
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
 import com.jhp.cloudmusic.utils.StatusBarUtils
-import com.jhp.cloudmusic.viewmodel.SharedViewModel
+import com.jhp.cloudmusic.ui.SharedViewModel
 import com.lzx.starrysky.OnPlayProgressListener
 import com.lzx.starrysky.SongInfo
 import com.lzx.starrysky.StarrySky

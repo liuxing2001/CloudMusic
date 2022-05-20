@@ -10,17 +10,16 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.databinding.FragmentDiscoveryTwoBinding
-import com.jhp.cloudmusic.extension.load
-import com.jhp.cloudmusic.model.HotTopList
+import com.jhp.cloudmusic.utils.extension.load
+import com.jhp.cloudmusic.data.model.HotTopList
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
 import com.jhp.cloudmusic.ui.common.view.LoadingObserver
-import com.jhp.cloudmusic.ui.playlist.PlayListActivity
+import com.jhp.cloudmusic.ui.playlist.normal.PlayListActivity
 import com.xuexiang.xui.widget.imageview.RadiusImageView
 
 

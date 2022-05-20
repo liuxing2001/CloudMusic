@@ -2,21 +2,23 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
         <import
             alias="Vm"
-            type="com.jhp.cloudmusic.ui.home.attention.AttentionViewModel" />
+            type="com.jhp.cloudmusic.ui.home.discovery.tab_layout.DiscoveryFragmentThreeViewModel" />
 
         <variable
             name="vm"
             type="Vm" />
     </data>
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        app:onRefreshListener="@{() -> vm.getMVList()}"
-        app:refreshing="@{vm.loading}"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:onRefreshListener="@{()->vm.getHotList()}"
+        app:refreshing="@{vm.loading}">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -26,7 +28,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -61,8 +63,13 @@
                     android:id="@+id/rv_discover_playlist"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
                     tools:listitem="@layout/item_discover_playlist" />
-
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_height="1px"
+                    android:background="#FFA59C9C"
+                    android:layout_width="fill_parent" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -72,10 +79,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginBottom="15dp"
                         android:padding="3dp"
-                        android:text="新碟" />
+                        android:text="新碟"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/tv_discover_new_song"
@@ -83,11 +93,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="3"
                         android:padding="3dp"
-                        android:text="新歌" />
+                        android:text="新歌"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/tv_discover_more_album_song"

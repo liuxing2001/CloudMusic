@@ -1,6 +1,6 @@
 package com.jhp.cloudmusic.api
 
-import com.jhp.cloudmusic.model.*
+import com.jhp.cloudmusic.data.model.*
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -69,6 +69,18 @@ interface UserService {
     fun getMvComment(@Query("id") id: String): Call<MusicComment>
 
     //获取歌单 (网友精选碟)
-    @GET(" /top/playlist")
-    fun getHotPlayList(): Call<HotPlayList>
+    @GET("/top/playlist")
+    fun getHotPlayList(@Query("limit") count:Int ): Call<HotPlayList>
+
+    //获取新歌速递
+    @GET("/top/song")
+    fun getNewMusic(): Call<NewMusic>
+
+    //获取推荐电台
+    @GET("/dj/recommend")
+    fun getRecommendDj(): Call<RecommendDj>
+
+    //获取电台banner
+    @GET("/dj/banner")
+    fun getDjBanner(): Call<DjBanner>
 }

@@ -16,11 +16,11 @@ import com.google.gson.Gson
 
 import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.databinding.FragmentDiscoveryOneBinding
-import com.jhp.cloudmusic.model.NowPlayInfo
-import com.jhp.cloudmusic.model.RecommendSongs
+import com.jhp.cloudmusic.data.model.NowPlayInfo
+import com.jhp.cloudmusic.data.model.RecommendSongs
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
 import com.jhp.cloudmusic.ui.player.PlayerActivity
-import com.jhp.cloudmusic.viewmodel.SharedViewModel
+import com.jhp.cloudmusic.ui.SharedViewModel
 
 class DiscoveryFragmentOne : Fragment() {
     private lateinit var adapter: KotlinDataAdapter<RecommendSongs.Data.DailySong>

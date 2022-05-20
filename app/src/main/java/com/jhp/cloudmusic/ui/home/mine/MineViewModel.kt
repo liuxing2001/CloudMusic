@@ -1,11 +1,10 @@
 package com.jhp.cloudmusic.ui.home.mine
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.jhp.cloudmusic.model.UserPlayList
-import com.jhp.cloudmusic.repository.Repository
+import com.jhp.cloudmusic.data.model.UserPlayList
+import com.jhp.cloudmusic.data.repository.Repository
 
 class MineViewModel : ViewModel() {
 

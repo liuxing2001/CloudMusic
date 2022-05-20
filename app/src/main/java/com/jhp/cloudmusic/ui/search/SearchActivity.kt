@@ -6,10 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 
 import com.jhp.cloudmusic.databinding.ActivitySearchBinding
 import com.jhp.cloudmusic.ui.MainActivity
-import com.jhp.cloudmusic.viewmodel.SharedViewModel
+import com.jhp.cloudmusic.ui.SharedViewModel
 import com.xiaoyouProject.searchbox.SearchFragment
 import com.xiaoyouProject.searchbox.entity.CustomLink
-import java.util.*
 import kotlin.collections.ArrayList
 
 

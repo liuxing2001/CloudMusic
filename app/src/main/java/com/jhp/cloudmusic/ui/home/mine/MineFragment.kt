@@ -10,7 +10,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
@@ -19,9 +18,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.dao.UserInfoDao
 import com.jhp.cloudmusic.databinding.FragmentMineBinding
-import com.jhp.cloudmusic.model.UserPlayList
+import com.jhp.cloudmusic.data.model.UserPlayList
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
-import com.jhp.cloudmusic.ui.playlist.PlayListActivity
+import com.jhp.cloudmusic.ui.playlist.normal.PlayListActivity
 import com.jhp.cloudmusic.utils.XToastUtils
 import com.xuexiang.xui.utils.WidgetUtils
 import com.xuexiang.xui.widget.dialog.MiniLoadingDialog

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/iv_item_album_song"
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_test" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_alignTop="@+id/tv_item_album_song_playnum"
+        android:layout_alignBottom="@+id/tv_item_album_song_playnum"
+        android:layout_toLeftOf="@+id/tv_item_album_song_playnum"
+        android:src="@drawable/ic_song_play_num" />
+
+    <TextView
+        android:id="@+id/tv_item_album_song_playnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/iv_item_album_song"
+        android:layout_marginRight="5dp"
+        android:text="999"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_item_album_song_name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_item_album_song"
+        android:layout_alignStart="@+id/iv_item_album_song"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="【圆】18年后找回了孩子，我却感觉第二次“失去”了孩子"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_item_album_song_artist"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_item_album_song_name"
+        android:layout_alignStart="@+id/iv_item_album_song"
+        android:layout_marginTop="2dp"
+        android:text="人间剧场"
+        android:textSize="11sp" />
+</RelativeLayout>

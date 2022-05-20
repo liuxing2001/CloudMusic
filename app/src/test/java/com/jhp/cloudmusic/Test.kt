@@ -1,7 +1,5 @@
 package com.jhp.cloudmusic
 
-import com.jhp.cloudmusic.extension.md5Encode
-
 /**
  * 1
  * @author : jhp

@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.core.content.edit
 import com.google.gson.Gson
 import com.jhp.cloudmusic.MyApplication
-import com.jhp.cloudmusic.model.LoginUser
-import com.jhp.cloudmusic.model.UserInfo
+import com.jhp.cloudmusic.data.model.LoginUser
+import com.jhp.cloudmusic.data.model.UserInfo
 
 /**
  * dao层,本地保存用户登录信息

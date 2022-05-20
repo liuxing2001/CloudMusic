@@ -1,7 +1,7 @@
 package com.jhp.cloudmusic.api
 
 import android.util.Log
-import com.jhp.cloudmusic.model.LoginUser
+import com.jhp.cloudmusic.data.model.LoginUser
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,8 +32,10 @@ object ApplicationNetWork {
     suspend fun getMvUrl(id: String) = UserService.getMvUrl(id).await()
     suspend fun getMvCountDetail(id: String) = UserService.getMvCountDetail(id).await()
     suspend fun getMvComment(id: String) = UserService.getMvComment(id).await()
-    suspend fun getHotPlayList() = UserService.getHotPlayList().await()
-
+    suspend fun getHotPlayList() = UserService.getHotPlayList(12).await()
+    suspend fun getNewMusic() = UserService.getNewMusic().await()
+    suspend fun getRecommendDj() = UserService.getRecommendDj().await()
+    suspend fun getDjBanner() = UserService.getDjBanner().await()
     //这里采用协程异步调用的方式,统一了网络服务的接口,因此所有API都定义为挂起函数
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine {

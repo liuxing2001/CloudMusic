@@ -3,11 +3,9 @@ package com.jhp.cloudmusic.ui.mvplayer
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.jhp.cloudmusic.model.MVUrl
-import com.jhp.cloudmusic.model.MusicComment
-import com.jhp.cloudmusic.model.MusicUrl
-import com.jhp.cloudmusic.model.UserPlayList
-import com.jhp.cloudmusic.repository.Repository
+import com.jhp.cloudmusic.data.model.MVUrl
+import com.jhp.cloudmusic.data.model.MusicComment
+import com.jhp.cloudmusic.data.repository.Repository
 
 class MVPlayerViewModel:ViewModel() {
     //获取MV url

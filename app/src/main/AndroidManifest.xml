@@ -31,7 +31,7 @@
             android:name=".ui.search.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.playlist.PlayListActivity"
+            android:name=".ui.playlist.normal.PlayListActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity

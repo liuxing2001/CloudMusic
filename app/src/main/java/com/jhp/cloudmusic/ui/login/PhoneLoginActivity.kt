@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.jhp.cloudmusic.databinding.ActivityPhoneLoginBinding
-import com.jhp.cloudmusic.extension.md5Encode
-import com.jhp.cloudmusic.model.LoginUser
+import com.jhp.cloudmusic.utils.extension.md5Encode
+import com.jhp.cloudmusic.data.model.LoginUser
 import com.jhp.cloudmusic.ui.MainActivity
 import com.jhp.cloudmusic.utils.XToastUtils
 import com.xuexiang.xui.utils.WidgetUtils

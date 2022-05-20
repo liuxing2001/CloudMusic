@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.jhp.cloudmusic.model.HotTopList
-import com.jhp.cloudmusic.repository.Repository
+import com.jhp.cloudmusic.data.model.HotTopList
+import com.jhp.cloudmusic.data.repository.Repository
 
 
 class DiscoveryFragmentTwoViewModel : ViewModel() {
@@ -30,6 +30,6 @@ class DiscoveryFragmentTwoViewModel : ViewModel() {
         val list = data.filter {
             it.tracks.isNotEmpty()
         }
-        hotTopData.addAll(data)
+        hotTopData.addAll(list)
     }
 }

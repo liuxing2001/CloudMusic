@@ -84,11 +84,10 @@ dependencies {
     implementation 'com.github.Moriafly:LyricViewX:1.2.1'
     //      搜索框
     implementation 'com.github.xiaoyou-xblog:SearchDialog:v2.2'
-
     //      视频播放
-//    implementation 'com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.2.0-release-jitpack'
-//
     implementation 'cn.jzvd:jiaozivideoplayer:7.7.0'
+
+
 
     implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
 

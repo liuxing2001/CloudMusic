@@ -1,22 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.village.VillageFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <data>
+
+
+        <import type="android.graphics.Typeface" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="5dp">
+
+                <com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner
+                    android:id="@+id/sib_the_most_comlex_usage"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    app:bb_barColor="#88000000"
+                    app:bb_barPaddingBottom="5dp"
+                    app:bb_barPaddingLeft="10dp"
+                    app:bb_barPaddingRight="10dp"
+                    app:bb_barPaddingTop="5dp"
+                    app:bb_delay="2"
+                    app:bb_indicatorCornerRadius="3dp"
+                    app:bb_indicatorGap="8dp"
+                    app:bb_indicatorGravity="RIGHT"
+                    app:bb_indicatorHeight="6dp"
+                    app:bb_indicatorSelectColor="#ffffff"
+                    app:bb_indicatorStyle="CORNER_RECTANGLE"
+                    app:bb_indicatorUnselectColor="#88ffffff"
+                    app:bb_indicatorWidth="6dp"
+                    app:bb_isAutoScrollEnable="true"
+                    app:bb_isBarShowWhenLast="true"
+                    app:bb_isIndicatorShow="true"
+                    app:bb_isLoopEnable="true"
+                    app:bb_isTitleShow="true"
+                    app:bb_period="10"
+                    app:bb_scale="0.5625"
+                    app:bb_textColor="#ffffff"
+                    app:bb_textSize="13.5sp">
+
+                </com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner>
+                <!--                <com.bigkoo.convenientbanner.ConvenientBanner-->
+                <!--                    android:id="@+id/banner_recycler_item"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="130dp"-->
+                <!--                    bannerPic="@{vm.bannersPic}"-->
+                <!--                    bannerListener="@{bannerListener}" />-->
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_discover_daily_recommend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_mine_spec"
+                        onClickWithDebouncing="@{}"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_item_spec"
+                        android:src="@drawable/t_dragonball_icn_daily" />
+
+                    <TextView
+                        android:id="@+id/tv_spec_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="每日推荐"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_discover_gedan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_mine_spec1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_item_spec"
+                        android:src="@drawable/t_dragonball_icn_playlist" />
+
+                    <TextView
+                        android:id="@+id/tv_spec_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="歌单"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_discover_rank"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_mine_spec2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_item_spec"
+                        android:src="@drawable/t_dragonball_icn_rank" />
+
+                    <TextView
+                        android:id="@+id/tv_spec_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="排行榜"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_discover_radio"
+                    onClickWithDebouncing="@{}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_mine_spec3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_item_spec"
+                        android:src="@drawable/t_dragonball_icn_radio" />
+
+                    <TextView
+                        android:id="@+id/tv_spec_name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="电台"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_discover_myfm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_mine_spec4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/ic_mine_fm" />
+
+                    <TextView
+                        android:id="@+id/tv_spec_name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="私人FM"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/app_background" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -19,7 +19,7 @@ import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.databinding.FragmentMusicTabBarBinding
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
 import com.jhp.cloudmusic.ui.player.PlayerActivity
-import com.jhp.cloudmusic.viewmodel.SharedViewModel
+import com.jhp.cloudmusic.ui.SharedViewModel
 import com.lzx.starrysky.SongInfo
 import com.lzx.starrysky.StarrySky
 import com.xuexiang.xui.utils.WidgetUtils
@@ -154,7 +154,9 @@ class MusicTabFragment : Fragment() {
                 dialog.show()
                 WidgetUtils.transparentBottomSheetDialogBackground(dialog);
             }
-
+            musicTabDisc.setOnClickListener{
+                goPlayerPage()
+            }
             musicTabHead.setOnClickListener {
                 goPlayerPage()
             }

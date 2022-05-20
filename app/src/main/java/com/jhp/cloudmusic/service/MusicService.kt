@@ -9,16 +9,14 @@ import android.content.IntentFilter
 import android.os.Build
 import android.os.IBinder
 import android.widget.RemoteViews
-import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.NotificationTarget
 import com.jhp.cloudmusic.NotificationReceiver
 import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.ui.MainActivity
 import com.jhp.cloudmusic.ui.player.PlayerActivity
 import com.jhp.cloudmusic.utils.XToastUtils
-import com.jhp.cloudmusic.viewmodel.SharedViewModel
+import com.jhp.cloudmusic.ui.SharedViewModel
 import com.lzx.starrysky.SongInfo
 import com.lzx.starrysky.StarrySky
 

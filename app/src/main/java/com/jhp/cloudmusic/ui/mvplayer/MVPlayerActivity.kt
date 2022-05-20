@@ -2,28 +2,20 @@ package com.jhp.cloudmusic.ui.mvplayer
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.jzvd.Jzvd
 import com.bumptech.glide.Glide
 import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.databinding.ActivityMvPlayerBinding
-import com.jhp.cloudmusic.extension.visible
-import com.jhp.cloudmusic.model.MusicComment
-import com.jhp.cloudmusic.model.RecommendSongs
+import com.jhp.cloudmusic.utils.extension.visible
+import com.jhp.cloudmusic.data.model.MusicComment
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
-import com.jhp.cloudmusic.ui.home.mine.MineViewModel
-import com.lzx.starrysky.utils.contextReflex
 import com.xuexiang.xui.utils.WidgetUtils
-import com.xuexiang.xui.widget.button.shinebutton.ShineButton
 import com.xuexiang.xui.widget.dialog.MiniLoadingDialog
-import com.xuexiang.xui.widget.imageview.RadiusImageView
 
 
 class MVPlayerActivity : AppCompatActivity() {

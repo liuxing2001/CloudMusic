@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.jhp.cloudmusic.model.LyricModel
-import com.jhp.cloudmusic.repository.Repository
+import com.jhp.cloudmusic.data.model.LyricModel
+import com.jhp.cloudmusic.data.repository.Repository
 
 class PlayerActivityViewModel :ViewModel() {
     private val songsId = MutableLiveData<Int>()

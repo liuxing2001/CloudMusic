@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -15,17 +14,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jhp.cloudmusic.R
 import com.jhp.cloudmusic.databinding.FragmentAttentionBinding
-import com.jhp.cloudmusic.extension.load
-import com.jhp.cloudmusic.extension.toMinAndSeconds
-import com.jhp.cloudmusic.model.HotTopList
-import com.jhp.cloudmusic.model.MVList
+import com.jhp.cloudmusic.utils.extension.load
+import com.jhp.cloudmusic.utils.extension.toMinAndSeconds
+import com.jhp.cloudmusic.data.model.MVList
 import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
 import com.jhp.cloudmusic.ui.common.view.LoadingObserver
-import com.jhp.cloudmusic.ui.home.discovery.tab_layout.DiscoveryFragmentTwoViewModel
 import com.jhp.cloudmusic.ui.mvplayer.MVPlayerActivity
-
-import com.jhp.cloudmusic.ui.playlist.PlayListActivity
-import com.xuexiang.xui.widget.imageview.RadiusImageView
 
 
 class AttentionFragment : Fragment() {
