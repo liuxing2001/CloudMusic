@@ -8,41 +8,25 @@
 
 ### 安装要求
 
-列出运行该项目必须要具备的条件以及必须要安装的软件，最好给出具体的安装步骤。
-
-* 必须安装我
-* 我也必须安装
-* 安装我也是必须的
+* 安卓8.0以上
 
 ### 安装步骤
 
-一步一步地说明怎么去搭建环境，怎么让项目跑起来。
-
-首先你需要
-
-- 干这件事
-- 干那件事
-- 继续干这件事
-
-......一直到完成。
+下载CloudMusic.apk文件并安装
 
 最后阐述安装完成后的情况，展示下Demo。
 
 
-## 部署
 
-对以上的安装步骤进行补充说明，描述如何在在线环境中安装部署该项目。
 
 ## 使用到的框架
+- **网易云音乐API**：[**NeteaseCloudMusicApi**](https://github.com/Binaryify/NeteaseCloudMusicApi)
+- **视频播放**： [JiaoZiVideoPlayer](https://github.com/Jzvd/JiaoZiVideoPlayer)
+- **图片加载**： [glide](https://github.com/bumptech/glide)
+- **XUI**： [XUI](https://github.com/xuexiangjys/XUI)
+- **音乐播放**： [StarrySky](https://github.com/EspoirX/StarrySky)
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) -  Web框架
-* [Maven](https://maven.apache.org/) - 依赖属性管理
-* [ROME](https://rometools.github.io/rome/) - 生成RSS源
 
-
-## 版本控制
-
-该项目使用 [SemVer](http://semver.org/) 进行版本管理。您可以在 [tags on this repository](https://github.com/your/project/tags) 参看当前可用版本。
 
 ## 作者
 
@@ -52,6 +36,7 @@
 
 ## 鸣谢
 
-* 该项目参考了XXX的 XXX
-* 灵感来源于XXX
-* 其他
+* 该项目参考了 我走路带着风啊 的 CloudMusic (https://gitee.com/gsphelow/cloud-music)
+* UI参考了zion223 的 NeteaseCloudMusic (https://github.com/zion223/NeteaseCloudMusic)
+* 灵感来源于网易云音乐Android客户端V6.1版本
+
