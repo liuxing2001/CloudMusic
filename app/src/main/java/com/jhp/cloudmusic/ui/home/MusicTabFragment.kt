@@ -77,8 +77,8 @@ class MusicTabFragment : Fragment() {
             .setData(sharedViewModel.mediaPlayerList as ArrayList)
             .addBindView { itemView, itemData, index ->
                 val songTitle: TextView = itemView.findViewById(R.id.songTitle)
-                val songSubTitle: TextView = itemView.findViewById(R.id.songSubTitle)
-                val songImg: TextView = itemView.findViewById(R.id.songIndex)
+                val songSubTitle: TextView = itemView.findViewById(R.id.songTotalTime)
+                val songImg: TextView = itemView.findViewById(R.id.songPic)
                 songTitle.text = itemData.songName
                 songSubTitle.text = itemData.artist
                 songImg.text = "${index+1}"
@@ -122,7 +122,7 @@ class MusicTabFragment : Fragment() {
                 //设置当前播放音乐，以便于跳转播放界面后监听
                 sharedViewModel.setNowPlayerSong(obj)
             } else {
-                binding.musicTabPlay.setImageResource(R.drawable.icon_music_play)
+                binding.musicTabPlay.setImageResource(R.mipmap.music_tab_play)
                 objectAnimator.pause()
             }
         }

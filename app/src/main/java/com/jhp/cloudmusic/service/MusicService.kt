@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.IBinder
 import android.widget.RemoteViews
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.NotificationTarget
 import com.jhp.cloudmusic.NotificationReceiver
 import com.jhp.cloudmusic.R
@@ -40,7 +41,7 @@ class MusicService : Service() {
     private var notificationTarget: NotificationTarget? = null
 
     override fun onBind(intent: Intent): IBinder? {
-        return null;
+        return null
     }
 
     override fun onCreate() {
@@ -115,23 +116,23 @@ class MusicService : Service() {
                     status = 13
                 }
             }
-//            //初始化通知栏
-//            initNotificationBar()
-//            // 1.上下文 2.图标控件的ResID 2.RemoteView  ,4 Notification 5 Notification_ID
-//            notificationTarget = NotificationTarget(
-//                context,
-//                R.id.bgmMusicImageView,
-//                contentView,
-//                notification,
-//                R.string.app_name
-//            );
-//            //设置通知栏封面
-//            if (context != null) {
-//                Glide.with(context).asBitmap()
-//                    .load(playerController.getNowPlayingSongInfo()?.songCover)
-//                    .placeholder(R.drawable.ic_logo_app)
-//                    .into(notificationTarget!!)
-//            };
+            //初始化通知栏
+            initNotificationBar()
+            // 1.上下文 2.图标控件的ResID 2.RemoteView  ,4 Notification 5 Notification_ID
+            notificationTarget = NotificationTarget(
+                context,
+                R.id.bgmMusicImageView,
+                contentView,
+                notification,
+                R.string.app_name
+            );
+            //设置通知栏封面
+            if (context != null) {
+                Glide.with(context).asBitmap()
+                    .load(playerController.getNowPlayingSongInfo()?.songCover)
+                    .placeholder(R.drawable.ic_logo_app)
+                    .into(notificationTarget!!)
+            }
             val sendIntent = Intent(PlayerActivity.UPDATE_ACTION)
             sendIntent.putExtra("update", status)
             //发送广播，将被PlayerActivity组件中的BroadcastReceiver接收到
@@ -158,10 +159,13 @@ class MusicService : Service() {
         } else {
             contentView.setImageViewResource(R.id.stopImageView, R.drawable.icon_music_play)
         }
+
         // 实现中止/播放
         val intentStop = Intent("stop")
+        intentStop.putExtra("control",2)
         val pIntentStop = PendingIntent.getBroadcast(this, 0, intentStop, 0)
         contentView.setOnClickPendingIntent(R.id.stopImageView, pIntentStop)
+
         //下一首事件
         val intentNext = Intent("next") //发送播放下一曲的通知
         val pIntentNext = PendingIntent.getBroadcast(this, 0, intentNext, 0)

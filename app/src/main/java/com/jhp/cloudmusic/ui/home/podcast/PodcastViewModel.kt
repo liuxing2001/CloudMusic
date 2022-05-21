@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.jhp.cloudmusic.data.model.DjBanner
-import com.jhp.cloudmusic.data.model.DjProgram
+
 import com.jhp.cloudmusic.data.model.HotTopList
 import com.jhp.cloudmusic.data.model.RecommendDj
 import com.jhp.cloudmusic.data.repository.Repository

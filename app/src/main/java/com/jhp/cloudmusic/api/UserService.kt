@@ -1,5 +1,6 @@
 package com.jhp.cloudmusic.api
 
+import DjProgram
 import com.jhp.cloudmusic.data.model.*
 import retrofit2.Call
 import retrofit2.http.GET
@@ -24,13 +25,18 @@ interface UserService {
     @GET("/cloudsearch")
     fun search(@Query("keywords") keywords: String): Call<SearchSongs>
 
+    // 默认搜索关键词
+
+    @GET("/search/default")
+    fun getSearchDefault(): Call<SearchDefault>
+
     // 获取用户歌单
     @GET("/user/playlist")
     fun getPlayList(@Query("uid") uid: String): Call<UserPlayList>
 
     //获取歌单所有歌曲
     @GET("/playlist/track/all")
-    fun getPlayListTrack(@Query("id") id: String, @Query("limit") limit: Int): Call<SongList>
+    fun getPlayListTrack(@Query("id") id: String): Call<SongList>
 
     //获取推荐歌曲
     @GET("/recommend/songs")
@@ -83,4 +89,8 @@ interface UserService {
     //获取电台banner
     @GET("/dj/banner")
     fun getDjBanner(): Call<DjBanner>
+
+    //获取电台所有节目
+    @GET("/dj/program")
+    fun getDjProgramList(@Query("rid") id: String, @Query("limit") limit: Int): Call<DjProgram>
 }

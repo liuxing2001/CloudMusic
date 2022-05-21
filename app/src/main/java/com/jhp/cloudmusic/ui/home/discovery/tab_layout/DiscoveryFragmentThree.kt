@@ -25,6 +25,7 @@ import com.jhp.cloudmusic.ui.common.adapter.KotlinDataAdapter
 import com.jhp.cloudmusic.ui.common.view.LoadingObserver
 import com.jhp.cloudmusic.ui.player.PlayerActivity
 import com.jhp.cloudmusic.ui.playlist.normal.PlayListActivity
+import com.lzx.starrysky.utils.formatTime
 
 
 class DiscoveryFragmentThree : Fragment() {
@@ -52,6 +53,7 @@ class DiscoveryFragmentThree : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initData() {
         hotListAdapter = KotlinDataAdapter.Builder<HotPlayList.PlayList>()
             .setLayoutId(R.layout.item_discover_playlist)
@@ -86,22 +88,26 @@ class DiscoveryFragmentThree : Fragment() {
         }
 
         newMusicAdapter = KotlinDataAdapter.Builder<NewMusic.Data>()
-            .setLayoutId(R.layout.layout_song_item)
+            .setLayoutId(R.layout.item_podcast_song)
             .setData(viewModel.newMusic)
             .addBindView { itemView, itemData, index ->
-                val songIndex = itemView.findViewById<TextView>(R.id.songIndex)
-                val title = itemView.findViewById<TextView>(R.id.songTitle)
-                val subTitle = itemView.findViewById<TextView>(R.id.songSubTitle)
-                title.text = itemData.name
-                subTitle.text = "${itemData.artists[0].name} - ${itemData.album.name}"
-                songIndex.text = "${index + 1}"
+                val songTitle: TextView = itemView.findViewById(R.id.pod_cast_song_title)
+                val songTotalTime: TextView = itemView.findViewById(R.id.pod_cast_song_total_time)
+                val songPic: ImageView = itemView.findViewById(R.id.pod_cast_song_pic)
+                val songPlayTime:TextView = itemView.findViewById(R.id.pod_cast_song_play_Num)
+                val songUpdateTime:TextView = itemView.findViewById(R.id.pod_cast_song_update_time)
+                songTitle.text = itemData.name
+                songTotalTime.text = itemData.duration.formatTime()
+                songPlayTime.text = itemData.album.name
+                songUpdateTime.text = itemData.artists[0].name + " — "
+                songPic.load(itemData.album.picUrl)
 
                 itemView.setOnClickListener {
                     val gson = Gson()
                     val obj: NowPlayInfo = gson.fromJson(gson.toJson(itemData), NowPlayInfo::class.java)
                     nowPlayInfoFormat(obj,itemData)
                     sharedViewModel.setNowPlayerSong(obj)
-                    sharedViewModel.setPlayerSongId(obj.id.toString())
+                    sharedViewModel.setPlayerSongId(obj.id)
                     sharedViewModel.playerSongUrlLiveData.observe(viewLifecycleOwner) {
                         val item = it.getOrNull()
                         if (item != null) {
@@ -134,7 +140,7 @@ class DiscoveryFragmentThree : Fragment() {
         viewModel.newMusicLiveData.observe(viewLifecycleOwner) {
             val item = it.getOrNull()
             if (item != null) {
-                viewModel.setNewMusic(item.data)
+                viewModel.setNewMusic(item.data.take(10))
                 newMusicAdapter.notifyDataSetChanged()
             }
         }

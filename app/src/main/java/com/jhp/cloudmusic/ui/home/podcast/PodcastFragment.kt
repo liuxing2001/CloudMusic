@@ -24,7 +24,7 @@ import com.jhp.cloudmusic.utils.extension.load
 import com.xuexiang.xui.widget.banner.widget.banner.BannerItem
 import com.xuexiang.xui.widget.banner.widget.banner.base.BaseBanner
 
-class PodcastFragment : Fragment(),BaseBanner.OnItemClickListener<BannerItem>{
+class PodcastFragment : Fragment(),BaseBanner.OnItemClickListener<BannerItem> {
 
     private lateinit var _binding: FragmentPodcastBinding
     private lateinit var cardAdapter: KotlinDataAdapter<RecommendDj.DjRadio>
@@ -55,19 +55,6 @@ class PodcastFragment : Fragment(),BaseBanner.OnItemClickListener<BannerItem>{
 
     @SuppressLint("SetTextI18n")
     fun initData() {
-//        mData = viewModel.djBannerList.map {
-//            BannerItem().apply {
-//                this.imgUrl = it.pic
-//                this.title = "ok"
-//            }
-//        }
-//
-//
-//        binding.sibCornerRectangle
-//            .setSource(mData)
-//            .setOnItemClickListener(this)
-//            .startScroll()
-
 
 
         cardAdapter = KotlinDataAdapter.Builder<RecommendDj.DjRadio>()
@@ -87,6 +74,12 @@ class PodcastFragment : Fragment(),BaseBanner.OnItemClickListener<BannerItem>{
                         putExtra("id", itemData.id)
                         putExtra("bgUrl", itemData.picUrl)
                         putExtra("title", itemData.name)
+                        putExtra("avUrl", itemData.dj.avatarUrl)
+                        putExtra("author", itemData.dj.nickname)
+                        putExtra("music_count", itemData.programCount.toString())
+//                        putExtra("description", itemData.)
+                        putExtra(" play_count", itemData.playCount.toString())
+
                     }
                     startActivity(intent)
                 }
@@ -109,14 +102,6 @@ class PodcastFragment : Fragment(),BaseBanner.OnItemClickListener<BannerItem>{
             val item = it.getOrNull()
             if (item != null) {
                 viewModel.setDjBanner(item.data)
-                binding.sibCornerRectangle.refreshDrawableState()
-                cardAdapter.notifyDataSetChanged()
-            }
-        }
-        viewModel.recommendDjLiveData.observe(viewLifecycleOwner) {
-            val item = it.getOrNull()
-            if (item != null) {
-                viewModel.setRecommendDj(item.djRadios)
                 mData = viewModel.djBannerList.map {
                     BannerItem().apply {
                         this.imgUrl = it.pic
@@ -130,13 +115,21 @@ class PodcastFragment : Fragment(),BaseBanner.OnItemClickListener<BannerItem>{
                     .setOnItemClickListener(this)
                     .startScroll()
             }
+            // cardAdapter.notifyDataSetChanged()
+
+        }
+        viewModel.recommendDjLiveData.observe(viewLifecycleOwner) {
+            val item = it.getOrNull()
+            if (item != null) {
+                viewModel.setRecommendDj(item.djRadios)
+
+                cardAdapter.notifyDataSetChanged()
+            }
         }
         viewModel.loading.observe(viewLifecycleOwner, LoadingObserver(requireContext()))
 
     }
-
     override fun onItemClick(view: View?, item: BannerItem?, position: Int) {
         XToastUtils.toast("position--->" + position + ", item:" + item!!.title)
     }
-
 }

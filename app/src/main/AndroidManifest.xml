@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.jhp.cloudmusic">
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BIND_REMOTEVIEWS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -26,17 +29,17 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.search.SearchResultActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.search.SearchActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.playlist.normal.PlayListActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.player.PlayerActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.MainActivity"
@@ -44,7 +47,7 @@
             android:theme="@style/AppTheme.MainActivity" />
         <activity
             android:name=".ui.login.PhoneLoginActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/AppTheme.PhoneLoginActivity" />
         <activity
             android:name=".ui.SplashActivity"
@@ -58,10 +61,13 @@
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.SplashActivity" />
-
+        <activity
+            android:name=".ui.playlist.podcast.PodCastListActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme" />
         <service
             android:name=".service.MusicService"
             android:enabled="true"

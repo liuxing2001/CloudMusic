@@ -3,15 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginStart="20dp"
     android:paddingTop="10dp">
 
-    <ImageView
+    <com.xuexiang.xui.widget.imageview.RadiusImageView
         android:id="@+id/iv_item_gedan_comment_avatar_img"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/ic_test"
-        tools:ignore="ContentDescription" />
+        app:riv_border_color="@color/xui_config_color_gray_6"
+        app:riv_border_width="1px"
+        app:riv_is_circle="true"
+        app:riv_selected_border_color="@color/xui_config_color_gray_4"
+        app:riv_selected_border_width="1px"
+        app:riv_selected_mask_color="@color/xui_config_color_gray_8" />
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_item_gedan_comment_avatar_img"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:src="@drawable/ic_test"-->
+<!--        tools:ignore="ContentDescription" />-->
 
     <TextView
         android:id="@+id/tv_item_gedan_comment_avatar_name"

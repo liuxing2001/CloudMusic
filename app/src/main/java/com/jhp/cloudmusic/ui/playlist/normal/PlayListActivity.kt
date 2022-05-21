@@ -92,8 +92,8 @@ class PlayListActivity : AppCompatActivity() {
             .addBindView { itemView, itemData, index ->
                 //绑定数据
                 val songTitle: TextView = itemView.findViewById(R.id.songTitle)
-                val songSubTitle: TextView = itemView.findViewById(R.id.songSubTitle)
-                val songIndex: TextView = itemView.findViewById(R.id.songIndex)
+                val songSubTitle: TextView = itemView.findViewById(R.id.songTotalTime)
+                val songIndex: TextView = itemView.findViewById(R.id.songPic)
                 songTitle.text = itemData.name
                 songSubTitle.text = "${itemData.ar[0].name} - ${itemData.al.name}"
                 songIndex.text = "${index + 1}"

@@ -76,6 +76,7 @@ class PlayerActivity : AppCompatActivity() {
 
     private fun initBar() {
         StatusBarUtils.setStatusBarDarkMode(this)
+        StatusBarUtils.translucent(this)
     }
 
     private fun initBinding() {
@@ -96,9 +97,9 @@ class PlayerActivity : AppCompatActivity() {
             .setLayoutId(R.layout.layout_song_item)
             .setData(shareViewModel.mediaPlayerList as ArrayList<SongInfo>)
             .addBindView { itemView, itemData, index ->
-                val songIndex : TextView = itemView.findViewById(R.id.songIndex)
+                val songIndex : TextView = itemView.findViewById(R.id.songPic)
                 val songTitle: TextView = itemView.findViewById(R.id.songTitle)
-                val songSubTitle: TextView = itemView.findViewById(R.id.songSubTitle)
+                val songSubTitle: TextView = itemView.findViewById(R.id.songTotalTime)
                 songTitle.text = itemData.songName
                 songSubTitle.text = itemData.artist
                 songIndex.text = "${index+1}"
@@ -141,7 +142,7 @@ class PlayerActivity : AppCompatActivity() {
 
         val bgView: ImageView = binding.playerBg
         val playDisc: ImageView = binding.playDisc
-        val writeImg: ImageView = binding.playWrite
+
         // 歌词发生变化
         viewModel.lyricLiveData.observe(this) {
             val item = it.getOrNull()
@@ -179,12 +180,11 @@ class PlayerActivity : AppCompatActivity() {
                         )
                     )
                 ).into(bgView)
-                load(R.drawable.play_disc).apply(RequestOptions.bitmapTransform(CircleCrop()))
-                    .into(playDisc)
                 load(item?.al?.picUrl).apply(RequestOptions.bitmapTransform(CircleCrop()))
-                    .into(writeImg)
+                    .into(playDisc)
+
             }
-            item?.id?.let { it1 -> viewModel.getLyric(it1) }
+            item?.id?.let { it1 -> viewModel.getLyric(it1.toInt()) }
         }
         //监听播放状态
         shareViewModel.playStatusLiveData.observe(this) {

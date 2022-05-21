@@ -32,7 +32,16 @@ object UserInfoDao {
             putString("userName", loginUser.userName)
             putString("md5_password", loginUser.md5_password)
             putString("userInfo", Gson().toJson(userInfo))
+            putString("token", userInfo.token)
+            putString("cookie",userInfo.cookie)
         }
+    }
+    //获取token 和cookie
+    fun getToken(): String {
+        return sharePreferences().getString("token","").toString()
+    }
+    fun getCookie(): String {
+        return sharePreferences().getString("cookie","").toString()
     }
 
     //获取用户信息

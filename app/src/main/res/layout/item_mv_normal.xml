@@ -5,24 +5,25 @@
     android:id="@+id/item_hotSong_card"
     style="@style/CardView.Light"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="wrap_content"
     android:layout_marginVertical="10dp"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:paddingTop="7dp"
-        android:paddingBottom="7dp">
+        android:paddingBottom="10dp">
 
         <ImageView
             android:id="@+id/iv_item_mv_cover"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="396dp"
+            android:layout_height="200dp"
             android:layout_marginStart="6dp"
+            android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/bg_wind" />
 
@@ -36,12 +37,12 @@
             android:layout_marginBottom="8dp"
             android:text="04:00"
             android:textColor="@color/white"
-            android:textSize="9sp" />
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/iv_play_num"
-            android:layout_width="13dp"
-            android:layout_height="13dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignTop="@+id/tv_item_mv_playnum"
             android:layout_alignBottom="@+id/tv_item_mv_playnum"
             android:layout_marginTop="3dp"
@@ -56,33 +57,36 @@
             android:layout_marginRight="5dp"
             android:text="11万"
             android:textColor="@color/white"
-            android:textSize="11sp" />
+            android:textSize="15sp" />
 
 
         <TextView
             android:id="@+id/tv_item_mv_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_item_mv_cover"
-            android:layout_alignLeft="@+id/iv_item_mv_cover"
-            android:layout_marginTop="3dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="MV名称"
-            android:textColor="#333333"
-            android:textSize="13sp" />
-
-        <TextView
-            android:id="@+id/tv_item_mv_creator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_item_mv_name"
             android:layout_alignLeft="@+id/iv_item_mv_cover"
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:maxLines="1"
+            android:text="MV名称"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_item_mv_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_item_mv_cover"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/tv_item_mv_name"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:singleLine="true"
             android:text="MV作者"
-            android:textSize="11sp" />
+            android:textSize="13sp" />
+
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>

@@ -24,7 +24,6 @@ class PhoneLoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initBinding()
         initListener()
         initObserver()
@@ -78,14 +77,14 @@ class PhoneLoginActivity : AppCompatActivity() {
         viewModel.userInfoLiveData.observe(this) {
             val account = it.getOrNull()
             mLoadingDialog.dismiss()
-
-
             if (account != null) {
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
 
+            }else{
+                XToastUtils.error("密码错误！")
             }
         }
     }

@@ -15,7 +15,7 @@
             android:gravity="center"
             android:textColor="@color/app_color_theme_7"
             android:textSize="20sp"
-            android:id="@+id/songIndex"
+            android:id="@+id/songPic"
             android:layout_gravity="center"
             android:layout_width="40dp"
             android:layout_height="40dp"/>
@@ -41,7 +41,7 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/songSubTitle"
+                android:id="@+id/songTotalTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"

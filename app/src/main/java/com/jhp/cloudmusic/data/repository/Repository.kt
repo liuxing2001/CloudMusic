@@ -29,6 +29,7 @@ object Repository {
     //登录
     fun login(data: LoginUser) = fire(Dispatchers.IO) {
         val res = ApplicationNetWork.login(data)
+        println("~~~$res")
         if (res.code == 200) {
             // 异步线程
             Thread {
@@ -49,6 +50,11 @@ object Repository {
 //        if (res.code == 200) Result.success(res.result.allMatches)
 //        else Result.failure(RuntimeException("response status is ${res.code}"))
 //    }
+    fun getSearchDefault() = fire(Dispatchers.IO) {
+        val res = ApplicationNetWork.getSearchDefault()
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
     //获取用户歌单
     fun getPlayList(data: String) = fire(Dispatchers.IO) {
         val res = ApplicationNetWork.getPlayList(data)
@@ -146,6 +152,12 @@ object Repository {
     //获取电台banner
     fun getDjBanner()= fire(Dispatchers.IO){
         val res = ApplicationNetWork.getDjBanner()
+        if (res.code == 200) Result.success(res)
+        else Result.failure(RuntimeException("response status is ${res.code}"))
+    }
+    //获取电台所有节目
+    fun getDjProgramList(data: String)= fire(Dispatchers.IO){
+        val res = ApplicationNetWork.getDjProgramList(data)
         if (res.code == 200) Result.success(res)
         else Result.failure(RuntimeException("response status is ${res.code}"))
     }

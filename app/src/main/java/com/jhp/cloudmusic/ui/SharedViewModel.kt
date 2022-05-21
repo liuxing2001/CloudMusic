@@ -14,7 +14,7 @@ import com.lzx.starrysky.SongInfo
  * @date : 2022-04-01 20:04
  */
 class SharedViewModel : ViewModel() {
-
+    var type = MutableLiveData<Int>(0)
     //播放器播放队列歌单(SongInfo)
     var mediaPlayerList: MutableList<SongInfo> = mutableListOf()
 
@@ -66,4 +66,10 @@ class SharedViewModel : ViewModel() {
     }
     val getSearchKey: String?
         get() = keyword.value
+
+    val searchDefaultLiveData = Transformations.switchMap(type){
+        Repository.getSearchDefault()
+    }
+
+
 }

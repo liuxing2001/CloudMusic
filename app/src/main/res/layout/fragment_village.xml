@@ -26,42 +26,19 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="5dp">
-
-                <com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner
-                    android:id="@+id/sib_the_most_comlex_usage"
+                <com.jhp.cloudmusic.ui.common.adapter.NestedScrollableHost
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    app:bb_barColor="#88000000"
-                    app:bb_barPaddingBottom="5dp"
-                    app:bb_barPaddingLeft="10dp"
-                    app:bb_barPaddingRight="10dp"
-                    app:bb_barPaddingTop="5dp"
-                    app:bb_delay="2"
-                    app:bb_indicatorCornerRadius="3dp"
-                    app:bb_indicatorGap="8dp"
-                    app:bb_indicatorGravity="RIGHT"
-                    app:bb_indicatorHeight="6dp"
-                    app:bb_indicatorSelectColor="#ffffff"
-                    app:bb_indicatorStyle="CORNER_RECTANGLE"
-                    app:bb_indicatorUnselectColor="#88ffffff"
-                    app:bb_indicatorWidth="6dp"
-                    app:bb_isAutoScrollEnable="true"
-                    app:bb_isBarShowWhenLast="true"
-                    app:bb_isIndicatorShow="true"
-                    app:bb_isLoopEnable="true"
-                    app:bb_isTitleShow="true"
-                    app:bb_period="10"
-                    app:bb_scale="0.5625"
-                    app:bb_textColor="#ffffff"
-                    app:bb_textSize="13.5sp">
+                    android:layout_height="wrap_content">
 
-                </com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner>
-                <!--                <com.bigkoo.convenientbanner.ConvenientBanner-->
-                <!--                    android:id="@+id/banner_recycler_item"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="130dp"-->
-                <!--                    bannerPic="@{vm.bannersPic}"-->
-                <!--                    bannerListener="@{bannerListener}" />-->
+                    <com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner
+                        android:id="@+id/village_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        app:bb_indicatorCornerRadius="2dp"
+                        app:bb_indicatorHeight="4dp"
+                        app:bb_indicatorWidth="10dp"
+                        app:bb_scale="0.389" />
+                </com.jhp.cloudmusic.ui.common.adapter.NestedScrollableHost>
             </androidx.cardview.widget.CardView>
 
             <LinearLayout

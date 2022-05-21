@@ -52,13 +52,14 @@
     <LinearLayout
         android:id="@+id/rl_item_video_group"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="218dp"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
+
         <cn.jzvd.JzvdStd
             android:id="@+id/jz_video"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

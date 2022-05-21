@@ -54,9 +54,9 @@ class DiscoveryFragmentOne : Fragment() {
             .setLayoutId(R.layout.layout_song_item)
             .setData(viewModel.recommendSongsList)
             .addBindView { itemView, itemData, index ->
-                val songIndex = itemView.findViewById<TextView>(R.id.songIndex)
+                val songIndex = itemView.findViewById<TextView>(R.id.songPic)
                 val title = itemView.findViewById<TextView>(R.id.songTitle)
-                val subTitle = itemView.findViewById<TextView>(R.id.songSubTitle)
+                val subTitle = itemView.findViewById<TextView>(R.id.songTotalTime)
                 title.text = itemData.name
                 subTitle.text = "${itemData.ar[0].name} - ${itemData.al.name}"
                 songIndex.text = "${index + 1}"

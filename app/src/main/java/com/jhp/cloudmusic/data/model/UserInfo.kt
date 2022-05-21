@@ -13,9 +13,9 @@ data class UserInfo(
         val anonimousUser: Boolean,
         val ban: Int,
         val baoyueVersion: Int,
-        val createTime: Long,
+        val createTime: String,
         val donateVersion: Int,
-        val id: Int,
+        val id: String,
         val salt: String,
         val status: Int,
         val tokenVersion: Int,
@@ -23,7 +23,7 @@ data class UserInfo(
         val userName: String,
         val vipType: Int,
 
-        val viptypeVersion: Long,
+        val viptypeVersion: String,
         val whitelistAuthority: Int
     )
 
@@ -31,12 +31,12 @@ data class UserInfo(
         val bindingTime: Long,
         val expired: Boolean,
         val expiresIn: Int,
-        val id: Long,
-        val refreshTime: Int,
+        val id: String,
+        val refreshTime: String,
         val tokenJsonStr: String,
         val type: Int,
         val url: String,
-        val userId: Int
+        val userId: String
     )
 
     data class Profile(
@@ -44,11 +44,11 @@ data class UserInfo(
         val authStatus: Int,
         val authority: Int,
         val avatarDetail: Any,
-        val avatarImgId: Long,
+        val avatarImgId: String,
         val avatarImgIdStr: String,
         val avatarImgId_str: String,
         val avatarUrl: String,
-        val backgroundImgId: Long,
+        val backgroundImgId: String,
         val backgroundImgIdStr: String,
         val backgroundUrl: String,
         val city: Int,
@@ -70,7 +70,7 @@ data class UserInfo(
         val province: Int,
         val remarkName: Any,
         val signature: String,
-        val userId: Int ? = 121,
+        val userId: String,
         val userType: Int,
         val vipType: Int
     ) {

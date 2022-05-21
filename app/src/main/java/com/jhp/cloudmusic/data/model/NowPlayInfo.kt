@@ -5,7 +5,7 @@ package com.jhp.cloudmusic.data.model
  * @author : jhp
  * @date : 2022-04-19 09:22
  */
-data class NowPlayInfo(var name: String, var id: Int, var ar: List<Ar>, var al: Al) {
+data class NowPlayInfo(var name: String, var id: String, var ar: List<Ar>, var al: Al) {
     data class Al(
         var id: String,
         var name: String,

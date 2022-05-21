@@ -55,7 +55,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="被驯服的象"
+            android:text="暂无歌曲"
             android:textColor="@color/listTextColor"
             android:textSize="15sp"
             tools:ignore="HardcodedText" />
@@ -69,7 +69,6 @@
             android:maxLength="20"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="蔡健雅"
             android:textColor="@color/listSubTextColor"
             android:textSize="11sp"
             tools:ignore="HardcodedText" />
@@ -78,7 +77,7 @@
 
     <ImageView
         android:id="@+id/music_tab_play"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="match_parent"
         android:layout_marginEnd="30dp"
         android:layout_toStartOf="@+id/music_tab_list"
