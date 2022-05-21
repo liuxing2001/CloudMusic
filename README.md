@@ -1,6 +1,7 @@
 # 项目名称（CloudMusic）
 
 仿网易云音乐Android客户端V6.1版本(MVVM架构)
+![logo](https://inews.gtimg.com/newsapp_bt/0/14252532161/1000)
 
 ## 上手指南
 
