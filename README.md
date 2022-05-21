@@ -23,8 +23,8 @@
 - **图片加载**： [glide](https://github.com/bumptech/glide)
 - **XUI**： [XUI](https://github.com/xuexiangjys/XUI)
 - **音乐播放**： [StarrySky](https://github.com/EspoirX/StarrySky)
-
-
+- **歌词控件**： [LyricViewX](https://github.com/Moriafly/LyricViewX)
+- **搜索框**： [SearchDialog](https://github.com/xiaoyou-xblog/SearchDialog)
 
 ## 作者
 
