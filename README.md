@@ -5,7 +5,8 @@
 
 ![logo](https://inews.gtimg.com/newsapp_bt/0/14252532161/1000)
 
-## 上手指南
+## 项目简介
+安卓初学者，为完成安卓大作业，精心“策划”两个月（借鉴大佬代码）写出的一坨垃圾，不过真的学到了很多东西
 
 ### 安装要求
 
@@ -14,9 +15,6 @@
 ### 安装步骤
 
 下载CloudMusic.apk文件并安装
-
-最后阐述安装完成后的情况，展示下Demo。
-
 
 
 ## 使用到的框架
@@ -36,7 +34,7 @@
 
 ## 鸣谢
 
-* 该项目参考了 我走路带着风啊 的 CloudMusic (https://gitee.com/gsphelow/cloud-music)
-* UI参考了zion223 的 NeteaseCloudMusic (https://github.com/zion223/NeteaseCloudMusic)
+* 该项目参考了 我走路带着风啊 的 [CloudMusic](https://gitee.com/gsphelow/cloud-music)
+* UI参考了zion223 的 [NeteaseCloudMusic](https://github.com/zion223/NeteaseCloudMusic)
 * 灵感来源于网易云音乐Android客户端V6.1版本
 
